@@ -1,9 +1,10 @@
-materiappslive (20150822-1) wheezy; urgency=low
+materiappslive (20150826-1) wheezy; urgency=low
 
+  * Moved to independent git repository
   * Included menu items for PDB, PDBj
   * Updated Wiki contents
 
- -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Sat, 22 Aug 2015 12:20:07 +0900
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Sat, 26 Aug 2015 19:17:07 +0900
 
 materiappslive (20150727-1) wheezy; urgency=low
 
