@@ -1,0 +1,3 @@
+applications/*	/usr/share/applications
+etc/*	/etc/skel/Desktop
+wiki/* /usr/share/MateriAppsLive/wiki

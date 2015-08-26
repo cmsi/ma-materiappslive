@@ -1,0 +1,55 @@
+materiappslive (20150822-1) wheezy; urgency=low
+
+  * Included menu items for PDB, PDBj
+  * Updated Wiki contents
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Sat, 22 Aug 2015 12:20:07 +0900
+
+materiappslive (20150727-1) wheezy; urgency=low
+
+  * Updated GettingStarted
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Mon, 27 Jul 2015 11:46:59 +0900
+
+materiappslive (20150724-1) wheezy; urgency=low
+
+  * Added link menu items for databases
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Fri, 24 Jul 2015 14:35:03 +0900
+
+materiappslive (20150215-1) wheezy; urgency=low
+
+  * Added English version of GettingStarted
+  * Changed default language of GettingStarted to English
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Sun, 15 Feb 2015 20:00:03 +0900
+
+materiappslive (20140916-4) wheezy; urgency=low
+
+  * Fixed typo
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Wed, 17 Sep 2014 16:29:27 +0900
+
+materiappslive (20140916-3) wheezy; urgency=low
+
+  * Updated snapshot of boot screen
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Wed, 17 Sep 2014 09:06:35 +0900
+
+materiappslive (20140916-2) wheezy; urgency=low
+
+  * Added OpenMX tutorial
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Tue, 16 Sep 2014 23:42:40 +0900
+
+materiappslive (20140916-1) wheezy; urgency=low
+
+  * Update to 20140916
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Tue, 16 Sep 2014 11:23:47 +0900
+
+materiappslive (20140718-1) wheezy; urgency=low
+
+  * Initial version of materiappslive package
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Fri, 18 Jul 2014 19:30:12 +0900

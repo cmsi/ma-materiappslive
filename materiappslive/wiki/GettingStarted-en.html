@@ -1,0 +1,308 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>MateriApps LIVE!: Getting Started</title>
+  <link rel="stylesheet" href="github.css" type="text/css" />
+</head>
+<body>
+<h1>MateriApps LIVE! / Getting Started</h1>
+
+<p>[English/<a href="GettingStarted.html">日本語</a>]</p>
+
+<p>The latest version of this document is available at <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted-en">https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted-en</a>.</p>
+
+<ol>
+<li><a href="ApplicationsAndTools-en.html">Installed Applications</a></li>
+<li><a href="#boot">How to run MateriApps LIVE!</a></li>
+<li><a href="#usage">How to use MateriApps LIVE! Applications</a></li>
+</ol>
+
+<p>CAUTION: Please follow the procedures written in the section &quot;<a href="#boot">2. How to run MateriApps LIVE!</a>&quot;. Incorrect procedures may damage your operation system.</p>
+
+<h2><a name="boot"></a>2. How to run MateriApps LIVE!</h2>
+
+<p>In the followings, we explain the way to boot MateriApps LIVE! from USB stick. Please refer to <a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova">MteriApps LIVE! OVA version</a>, for the usage of MateriApps LIVE! OVA version in VirtualBox.</p>
+
+<ol>
+<li><p>Insert the MateriApps LIVE! USB into a USB port after power of your computer is turned off.</p>
+
+<p><img src="GettingStarted-boot1.jpg" alt="boot"></p></li>
+<li><p>Open a boot device menu. </p>
+
+<ul>
+<li>A method for opening the boot device menu depends on your computational environment. Usually, the boot device menu opens by pressing a F2 or F12 button during startup of your computer.</li>
+<li>For Mac OS X, the boot device menu opens by pressing [option (Alt)] key.</li>
+<li>For some models of Mac machines or versions of Mac OS X, there is a known problem that the boot menu does not open even by pressing [option (Alt)] key. For more information, please access to the following website:  <a href="https://github.com/cmsi/MateriAppsLive/wiki/KnownProblems">https://github.com/cmsi/MateriAppsLive/wiki/KnownProblems</a>, <a href="https://github.com/cmsi/MateriAppsLive/wiki/MacBook">https://github.com/cmsi/MateriAppsLive/wiki/MacBook</a>.<br>
+When you find other problems, please report the environment of your machine (models, and versions of the Mac OS) to us.</li>
+</ul></li>
+<li><p>Select and launch the USB memory in the list of the boot devices.</p></li>
+<li><p>Select [Live (amd64 LANG=en KBD=us)] in the start screen and press the [Enter] key.</p>
+
+<ul>
+<li><strong>CAUTION: DO NOT select [Install, Graphical install] in [Advanced options]. This procedure deletes all data in your HDD and overwrites Debian Linux onto your operation system.</strong></li>
+</ul>
+
+<p><img src="GettingStarted-boot2.jpg" alt="boot"></p></li>
+<li><p>Debian/GNU Linux starts in a few minutes, and the desktop screen appears.</p></li>
+<li><p>Select [Accessories]-[LXTerminal] from the menu bar at the lower-left corner of the desktop.</p>
+
+<p><img src="GettingStarted-boot4.jpg" alt="boot"></p></li>
+<li><p>The applications is started on this terminal.</p>
+
+<p><img src="GettingStarted-boot5.jpg" alt="boot"></p></li>
+<li><p>To shut down MateriApps LIVE!., press the red button which is located at the lower-right corner of the desktop and select [Shutdown]. You can keep your data files saved in the home directory, and can use them also in the next time you launch the system. The files are stored in the USB memory.</p></li>
+</ol>
+
+<h2><a name="usage"></a>3. Information of each application</h2>
+
+<p>Directions for use the applications on MaterApps LIVE! is available at <a href="https://github.com/cmsi/MateriAppsLive/wiki">MateriApps LIVE! Wiki</a>. For more detailed information, please refer to the MateriApps page of each application. In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
+
+<h3><a name="akaikkr"></a>AkaiKKR (旧Machikaneyama2002)</h3>
+
+<ol>
+<li><p>How to setup AkaiKKR</p>
+
+<p>No additional setup is needed. Please observe the followint license upon using AkaiKKR.</p></li>
+</ol>
+
+<blockquote>
+<p>This AkaiKKR binary package is built and distributed for trial use on MateriApps LIVE! . For extensive use or production run, please register yourself at the AkaiKKR official web site and use the recent official source code.</p>
+</blockquote>
+
+<ol>
+<li><p>Example (Co)</p>
+
+<ol>
+<li><p>Copy /usr/share/akaikkr/in.</p>
+
+<pre><code>cp -rp /usr/share/akaikkr/in .
+</code></pre></li>
+<li><p>Make out and data directories</p>
+
+<pre><code>mkdir out data
+</code></pre></li>
+<li><p>Run AkaiKKR</p>
+
+<pre><code>specx &lt; in/co
+</code></pre></li>
+</ol></li>
+</ol>
+
+<p>For more detailed information, please look at &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/AkaiKKR">AkaiKKR Information</a>&quot; in MateriApp LIVE! wiki.</p>
+
+<h3><a name="alps"></a>ALPS</h3>
+
+<ol>
+<li>Tutorials: Sample files are available in /usr/share/alps/tutorials</li>
+<li><p>Example (<a href="http://alps.comp-phys.org/mediawiki/index.php/ALPS_2_Tutorials:Overview">Tutorial MC-02 Calculating magnetic susceptibilities by the classical MC and looper QMC codes</a>)</p>
+
+<ol>
+<li><p>Copy tutorial files</p>
+
+<pre><code>cp -rp /usr/share/alps/tutorials/mc-02-susceptibilities $HOME
+cd $HOME/mc-02-susceptibilities
+</code></pre></li>
+<li><p>Execute Python scripts</p>
+
+<pre><code>python tutorial2a.py
+python tutorial2b.py
+python tutorial2c.py
+python tutorial2d.py
+python tutorial2full.py
+</code></pre>
+
+<p>At the end of each Python script, calculation results will be plotted.  The Python scripts finishes after closing the window by clicking the top-right &#39;X&#39; mark. By executing the last script, all the results will be plotted in one figure.</p>
+
+<p><img src="GettingStarted-alps.jpg" alt="boot"></p></li>
+</ol></li>
+</ol>
+
+<p>For more detailed information, please look at &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/ALPS">ALPS Information</a>&quot; in MateriApp LIVE! wiki.</p>
+
+<h3><a name="ERmod"></a>ERmod</h3>
+
+<ol>
+<li><p>Tutorial: Sample files are available in /usr/share/ermod/example/gromacs.</p></li>
+<li><p>In the following example, the solvation free energy of ethanol in water is calculated from sample configuration files of GROMACS.</p>
+
+<ol>
+<li><p>Create a working directory and copy a set of input files into the directory</p>
+
+<pre><code>mkdir ermod
+cp -r /usr/share/ermod/example/gromacs/* ermod
+cd ermod
+</code></pre></li>
+<li><p>Execute a command &quot;gen_structure&quot;.</p>
+
+<pre><code> /usr/share/ermod/tools/gromacs/gen_structure --top etohsolution.top
+</code></pre>
+
+<p>User is asked which molecule is the solute. In the example case, ethanol is the solute, so you should type &quot;Ethanol&quot;. You can find new directories named &quot;soln&quot; and &quot;refs&quot;.</p></li>
+<li><p>Calculate an energy distribution function between solute and solvent from the MD trajectory in solution system (including ethanol and water).</p>
+
+<pre><code>cd soln
+/usr/share/ermod/tools/gromacs/gen_input --traj ../solution_run.xtc --log ../solution_run.log
+ermod
+</code></pre></li>
+<li><p>A set of structures derived from the MD trajectory in solute system (only ethanol in vacuum) inserts into the snapshots (coordinates) of MD trajectory in solvent system (only water).</p>
+
+<pre><code>cd ../refs
+/usr/share/ermod/tools/gromacs/gen_input --traj ../solvent_run.xtc --log ../solvent_run.log --flexible ../solute_run.xtc
+ermod
+</code></pre>
+
+<p>User obtains an energy distribution function from the insertion operation. Please note that the calculation on this step needs a little time to finish. If user wants to accelerate the calculation, add an option of &quot;maxins=100&quot; (the number is set arbitrarily) in &quot;parameters_er&quot;. This option represents the number of solute insertions per one snapshot of solvent trajectory (the default number is 1000). If user reduces this number, the calculaton finishes faster, but the result is less accuracy.</p></li>
+<li><p>Calculate the solvation free energy. (The last line of output is the final estimate of the solvation free energy.)</p>
+
+<pre><code>cd ..
+slvfe
+</code></pre></li>
+</ol></li>
+</ol>
+
+<p>For more detailed information, tutorial, and theory, please refer to <a href="http://sourceforge.net/p/ermod/wiki/Home/">http://sourceforge.net/p/ermod/wiki/Home/</a>.</p>
+
+<h3><a name="fearm"></a>feram</h3>
+
+<p>feram is a fast molecular dynamics (MD) simulator for ferroelectrics.  More information is available at feram homepage <a href="http://loto.sourceforge.net/feram/">http://loto.sourceforge.net/feram/</a>.</p>
+
+<ol>
+<li>Examples are provided in /usr/share/feram/example/.</li>
+<li><code>feram</code> command is placed in the search path. It can be executed as <code>feram foo123.feram</code> in LXTerminal.</li>
+<li><p>Example (hysteresis loop will be drawn after simulation for tens of minutes)</p>
+
+<pre><code>cp -a /usr/share/feram/example/27example-BaTiO3-new-param-E_wave .
+cd 27example-BaTiO3-new-param-E_wave
+feram 360cos.feram 360sin.feram
+./hysteresis.gp
+evince hysteresis.eps
+</code></pre></li>
+</ol>
+
+<h3><a name="gromacs"></a>Gromacs</h3>
+
+<ol>
+<li>Tutorial: Sample files are available in /usr/share/gromacs/tutor.</li>
+<li><p>Example</p>
+
+<p>In the following example, we will execute molecular dynamics simulation on a peptide molecule in water solvent by turns; 1) making a structure file, 2) introducing water solvent, 3) energy minimization calculations, 4) molecular dynamics simulation on water molecules with fixing the peptide molecule, 5) molecular dynamics simulation of the peptide molecule in water solvent, 6) visualization of simulation result using ngmx, the visualization software containing in GROMACS. </p>
+
+<ol>
+<li><p>Make an executing directory and copy the input files.</p>
+
+<pre><code>mkdir gromacs
+cp -r /usr/share/gromacs/tutor/* gromacs
+cd gromacs/gmxdemo
+chmod +x demo
+</code></pre></li>
+<li><p>Execute the demo script.</p>
+
+<pre><code>./demo
+</code></pre>
+
+<p>The structure data of peptide is in cpeptide.pdb that is placed on the same directory. Information about commands used in each step of calculation is available by opening the demo script by a text editor. After starting up the demo script, push the Enter key following the examination on the terminal. Finally, the visualization software ngmx will display. </p></li>
+<li><p>Operate the visualization software ngmx.</p>
+
+<p>After ngmx starts up, check the “Protein” on the popping dialog box and click the OK button. The boundary of the system and the calculated peptide molecule will display. Choose “Animate” inside “Display” menu on the upper menu bar. A dialog box will display on the bottom of the window. Click &quot;&gt;&gt;&quot; button and you will watch the move of the peptide molecule.</p></li>
+</ol></li>
+</ol>
+
+<h3><a name="openmx"></a>OpenMX</h3>
+
+<ol>
+<li>Tutorial: Sample files are available in /usr/share/openmx/work/.</li>
+<li><p>Example</p>
+
+<ol>
+<li><p>Make a directory for execution and copy an input file</p>
+
+<pre><code>mkdir openmx
+cp /usr/share/openmx/work/Methane.dat openmx
+cd openmx
+</code></pre></li>
+<li><p>Run OpenMX</p>
+
+<pre><code>openmx Methane.dat
+</code></pre></li>
+<li><p>Check of execution results</p>
+
+<p>Please compare the results with those on <a href="http://www.openmx-square.org/openmx_man3.7/node16.html">http://www.openmx-square.org/openmx_man3.7/node16.html</a>.</p></li>
+</ol></li>
+</ol>
+
+<h3><a name="smash"></a>SMASH</h3>
+
+<ol>
+<li><p>Tutorial: Sample files are available in /usr/share/smash/example.</p></li>
+<li><p>Example</p>
+
+<p>In the following example, the Hartree-Fock energy calculation of Anthracene (C14H10) with the 6-31G basis set and the visualization of its HOMO and LUMO are performed. The smash-vtk-generator file attached in SMASH and open source software ParaView are required for visualization.</p>
+
+<ol>
+<li><p>Generate a directory for execution and copy the input file.</p>
+
+<pre><code>mkdir smash
+cd smash
+cp /usr/share/smash/example/anthracene.inp .
+</code></pre></li>
+<li><p>Exectute SMASH.</p>
+
+<pre><code>smash &lt; anthracene.inp &gt; anthracene.out
+</code></pre>
+
+<p>After the execution, two files are generated, the output file &quot;anthracene.out&quot; and the checkpoint file &quot;anthracene.chk&quot;. The output file can be seen as a text file, which shows the computational conditions, atomic coordinates, basis functions, SCF processes, MO energies, and MO coefficients.</p></li>
+<li><p>Generate vtk files for HOMO and LUMO (anthracene-HOMO.vtk and anthracene-LUMO.vtk).</p>
+
+<pre><code>  smash-vtk-generator anthracene.chk anthracene-HOMO.vtk MO HOMO
+  smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
+</code></pre></li>
+<li>Start Parview Viewer from the bottom right menu.</li>
+<li>Select Load State from File menu and open the /usr/share/smash/vtk/mo-view.pvsm file.</li>
+<li>Open the anthracene-HOMO.vtk file, and you can see the contour map of HOMO.</li>
+<li>To display LUMO, open the anthracene-LUMO.vtk file after opening the /usr/share/smash/vtk/mo-view.pvsm file.</li>
+</ol></li>
+</ol>
+
+<p>For more detailed information, please look at &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/SMASH">SMASH Information</a>&quot; in MateriApps LIVE! Wiki.</p>
+
+<h3><a name="xtapp"></a>xTAPP &amp; TAPIOCA</h3>
+
+<ol>
+<li>Sample files are available in the following directories
+
+<ul>
+<li>xTAPP samples: /usr/share/xtapp/sample</li>
+<li>TAPIOCA samples: /usr/share/tapioca/sample</li>
+</ul></li>
+<li><p>Examples</p>
+
+<ol>
+<li><p>Make directory for execution</p>
+
+<pre><code>mkdir $HOME/xtapp
+</code></pre></li>
+<li><p>Copy sample shell scripts</p>
+
+<pre><code>cp /usr/share/xtapp/check/* $HOME/xtapp
+cd $HOME/xtapp
+</code></pre></li>
+<li><p>Example 1: simulation of silicon
+Execute si.sh</p>
+
+<pre><code>sh si.sh
+</code></pre></li>
+<li><p>Example 2: simulation of alpha-quarts
+Execute quartz.sh</p>
+
+<pre><code>sh quartz.sh
+</code></pre></li>
+<li><p>Execution of TAPIOCA
+Type &#39;tapioca&#39; in the terminal or execute from bottom-left menu (MateriApps &gt; tapioca).</p>
+
+<p><img src="GettingStarted-tapioca.jpg" alt="boot"></p></li>
+</ol></li>
+</ol>
+
+<p>For more detailed information, &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/xTAPPTapioca">Information of xTAPP &amp; TAPIOCA</a>&quot; in MateriApp LIVE! wiki.</p>
+</body>
+</html>
