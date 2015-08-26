@@ -1,0 +1,309 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>MateriApps LIVE!: はじめの一歩</title>
+  <link rel="stylesheet" href="github.css" type="text/css" />
+</head>
+<body>
+<h1>MateriApps LIVE! / はじめの一歩</h1>
+
+<p>[<a href="GettingStarted-en.html">English</a>/日本語]</p>
+
+<p>このドキュメントの最新版は <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted">https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted</a> にて公開されています.</p>
+
+<ol>
+<li><a href="ApplicationsAndTools.html">インストールされているソフト</a></li>
+<li><a href="#boot">MateriApps LIVE!の起動方法</a></li>
+<li><a href="#usage">MateriApps LIVE!上でのアプリの使用方法</a></li>
+</ol>
+
+<p>初めての方へ
+「<a href="#boot">2. MateriApps LIVE!の起動方法</a>」に従い起動してください. <strong>操作を誤るとご使用中のOSが上書きされる恐れがあります. 十分ご注意ください.</strong> </p>
+
+<h2><a name="boot"></a>2. MateriApps LIVE!の起動方法</h2>
+
+<p>以下では, USBメモリからブートする方法を説明します. VirtualBoxでの, MateriApps LIVE! OVA版の使い方については、<a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova">MateriApps LIVE! OVA版</a>をご覧ください.</p>
+
+<ol>
+<li><p>PCの電源を切った状態でMateriApps LIVE! USBを差し込みます.</p>
+
+<p><img src="GettingStarted-boot1.jpg" alt="boot"></p></li>
+<li><p>ブートデバイスメニューを開きます.</p>
+
+<ul>
+<li>ブートデバイスメニューを開く方法は, 各PCの環境に依存します. 多くのPCでは, BIOS起動時に画面にブートデバイスメニューを開くためのキー(F2, F12など)の説明が表示されますので, そのキーを押すことで開くことができます.</li>
+<li>Mac OS Xでは, [option (alt)]キーを押し続けることで開きます.</li>
+<li>Mac OS Xでは画像の乱れ及び, ブートが出来ないバージョンが確認されています. 詳細は, <a href="https://github.com/cmsi/MateriAppsLive/wiki/KnownProblems">https://github.com/cmsi/MateriAppsLive/wiki/KnownProblems</a>, <a href="https://github.com/cmsi/MateriAppsLive/wiki/MacBook">https://github.com/cmsi/MateriAppsLive/wiki/MacBook</a>をご覧ください. また, 上記バージョン以外で起動・未起動の確認をされた場合は, <a href="http://ma.cms-initiative.jp">MateriApps</a>の下にある「お問い合わせ」よりバージョン情報をお知らせください.</li>
+</ul></li>
+<li><p>ブートデバイスの一覧からUSBメモリを選択し起動します.</p></li>
+<li><p>MateriApps LIVE!の起動メニューから, 「Live (amd64 LANG=en KBD=jp)」を選択し, [enter]キーを押します. 英語環境, 英語版キーボードをご利用の場合は, amd64 LANG=en, KBD=usを選択してください.</p>
+
+<ul>
+<li><strong>「Advanced options」メニュー内のInstall, Graphical installは, 決して選択しないでください . HDDの内容が消去され, 既存の環境がDebian LINUX環境で上書きされてしまいます.</strong></li>
+</ul>
+
+<p><img src="GettingStarted-boot2.jpg" alt="boot"></p></li>
+<li><p>一分程度でDebian/GNU Linuxが起動し, デスクトップ画面があらわれます.</p></li>
+<li><p>画面左下のメニューから, 「Accessories」-「LXTerminal」を選択します.</p>
+
+<p><img src="GettingStarted-boot4.jpg" alt="boot"></p></li>
+<li><p>各アプリを使用するためのターミナルが起動します.</p>
+
+<p><img src="GettingStarted-boot5.jpg" alt="boot"></p></li>
+<li><p>MateriApps LIVE!の終了は, 画面右下の赤いボタンをクリックし, 「Shutdown」を選択します. ホームディレクトリなどに保存されたファイルはUSBメモリに退避されるので, 次回の起動時にも使うことができます.</p></li>
+</ol>
+
+<h2><a name="usage"></a>3. アプリケーション毎の情報</h2>
+
+<p>各アプリのMaterApps LIVE!上での使用方法は, <a href="https://github.com/cmsi/MateriAppsLive/wiki">MateriApps LIVE! Wiki</a>の「アプリケーションごとの情報」に記載されています. アプリのより詳細な情報は, MateriAppsの各アプリの説明をご覧ください . ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について説明します.</p>
+
+<h3><a name="akaikkr"></a>AkaiKKR</h3>
+
+<ol>
+<li><p>セットアップ方法</p>
+
+<p>AkaiKKRに関しては, 既にセットアップされているため特に作業は必要ありません. ただし, 以下のライセンス事項を遵守ください.</p></li>
+</ol>
+
+<blockquote>
+<p>This AkaiKKR binary package is built and distributed for trial use on MateriApps LIVE! . For extensive use or production run, please register yourself at the AkaiKKR official web site and use the recent official source code.</p>
+</blockquote>
+
+<ol>
+<li><p>実行例(Coの例)</p>
+
+<ol>
+<li><p>/usr/share/akaikkr/in をコピー</p>
+
+<pre><code>cp -rp /usr/share/akaikkr/in .
+</code></pre></li>
+<li><p>out ディレクトリと data ディレクトリを作成</p>
+
+<pre><code>mkdir out data
+</code></pre></li>
+<li><p>AkaiKKRを実行</p>
+
+<pre><code>specx &lt; in/co
+</code></pre></li>
+</ol></li>
+</ol>
+
+<p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/AkaiKKR">AkaiKKRの情報</a>」をご覧ください.</p>
+
+<h3><a name="alps"></a>ALPS</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/alps/tutorials にサンプルファイルが格納されています.</li>
+<li><p>実行例 (<a href="http://alps.comp-phys.org/mediawiki/index.php/ALPS_2_Tutorials:MC-02_Susceptibilities/ja">チュートリアル MC-02 古典MC、looper QMCコードによる磁化率の計算</a>)</p>
+
+<ol>
+<li><p>チュートリアルをコピー</p>
+
+<pre><code>cp -rp /usr/share/alps/tutorials/mc-02-susceptibilities $HOME
+cd $HOME/mc-02-susceptibilities
+</code></pre></li>
+<li><p>Pythonスクリプトを順番に実行</p>
+
+<pre><code>python tutorial2a.py
+python tutorial2b.py
+python tutorial2c.py
+python tutorial2d.py
+python tutorial2full.py
+</code></pre>
+
+<p>Pythonスクリプトを実行する毎に結果がプロットされます. プロットウィンドウの右上の×印をクリックしてウィンドウを閉じると, Pythonスクリプトが終了します. 最後のスクリプトを実行すると, それまでの計算結果がまとめてプロットされます.</p>
+
+<p><img src="GettingStarted-alps.jpg" alt="boot"></p></li>
+</ol></li>
+</ol>
+
+<p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/ALPS">ALPSの情報</a>」をご覧ください.</p>
+
+<h3><a name="ermod"></a>ERmod</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/ermod/example/gromacs にサンプルファイルが格納されています. </li>
+<li><p>実行例: 以下では, Gromacs用のサンプル(水中エタノール)の溶媒和自由エネルギーを計算します. </p>
+
+<ol>
+<li><p>実行用ディレクトリの作成とインプットのコピー</p>
+
+<pre><code>mkdir ermod
+cp -r /usr/share/ermod/example/gromacs/* ermod
+cd ermod
+</code></pre></li>
+<li><p>gen_structure の実行</p>
+
+<pre><code>/usr/share/ermod/tools/gromacs/gen_structure --top etohsolution.top
+</code></pre>
+
+<p>&quot;Molecule types in topology file: ETHANOL SOL&quot; と出て, 溶質はどちらか聞かれるので, Ethanol と入力. soln ディレクトリと refs ディレクトリが出来ます. </p></li>
+<li><p>溶液系のMDトラジェクトリから溶質ー溶媒間の2体相互作用エネルギー分布を計算</p>
+
+<pre><code>cd soln
+/usr/share/ermod/tools/gromacs/gen_input --traj ../solution_run.xtc --log ../solution_run.log
+ermod
+</code></pre></li>
+<li><p>溶質のMDトラジェクトリから構造を取り出し, テスト粒子として挿入することで, 溶質ー溶媒間のエネルギー分布を計算</p>
+
+<pre><code>cd ../refs
+/usr/share/ermod/tools/gromacs/gen_input --traj ../solvent_run.xtc --log ../solvent_run.log --flexible ../solute_run.xtc
+ermod
+</code></pre>
+
+<p>refs の計算はけっこう時間がかかるので, 早めに終わらせたい場合は, parameters_er ファイル中の upljcut = 12, の次の行に maxins = 100 などと書いてください(数字は任意). maxins は溶媒の 1 スナップショットに対する溶質の挿入回数で, デフォルトでは 1000 です. これを減らすことで計算時間は速くなりますが, 精度は落ちます. </p></li>
+<li><p>溶媒和自由エネルギーの計算 (出力の一番最後が自由エネルギーの最終的な計算結果)</p>
+
+<pre><code>cd ..
+slvfe
+</code></pre></li>
+</ol></li>
+</ol>
+
+<p>ERmod の動かし方や理論など、詳細については <a href="http://sourceforge.net/p/ermod/wiki/Home/">http://sourceforge.net/p/ermod/wiki/Home/</a> をご覧ください.</p>
+
+<h3><a name="fearm"></a>feram</h3>
+
+<p>feramは強誘電体の高速分子動力学シミュレーターです．
+<a href="http://loto.sourceforge.net/feram/">http://loto.sourceforge.net/feram/</a> がホームページです．</p>
+
+<ol>
+<li>/usr/share/feram/example/以下に例題が置かれています．</li>
+<li><code>feram</code>コマンドにはパスが通っています．LXTerminalから<code>feram foo123.feram</code>と実行できます．</li>
+<li><p>実行例（数十分のシミュレーションの後，ヒステリシスループを描きます．）</p>
+
+<pre><code>cp -a /usr/share/feram/example/27example-BaTiO3-new-param-E_wave .
+cd 27example-BaTiO3-new-param-E_wave
+feram 360cos.feram 360sin.feram
+./hysteresis.gp
+evince hysteresis.eps
+</code></pre></li>
+</ol>
+
+<h3><a name="gromacs"></a>Gromacs</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/gromacs/tutor にサンプルファイルが格納されています.</li>
+<li><p>実行例</p>
+
+<p>以下では, 水溶媒中のペプチド分子の分子動力学シミュレーションで, 1) 構造ファイルの作成, 2) 水溶媒の導入, 3) エネルギーー最小化計算, 4) ペプチド分子を固定しての水分子についての分子動力学シミュレーション, 5) 水溶媒中のペプチドの分子動力学シミュレーション(本番), 6) 可視化ソフト ngmx を使用した結果の可視化を順に実行する. </p>
+
+<ol>
+<li><p>実行用ディレクトリの作成とインプットのコピー</p>
+
+<pre><code>mkdir gromacs
+cp -r /usr/share/gromacs/tutor/* gromacs
+cd gromacs/gmxdemo
+chmod +x demo
+</code></pre></li>
+<li><p>デモの実行</p>
+
+<pre><code>./demo
+</code></pre>
+
+<p>ペプチドの構造データは demo と同じディレクトリの cpeptide.pdb にある. 計算の各段階 のコマンドについてはスクリプト demo を テキストファイルで開く事で確認できる. demo 実行後, 説明にしたがって Enter を押していくとシミュレーションが終了し, 最後に可視化ソフト ngmx の画面が表示される. </p></li>
+<li><p>可視化ソフト ngmx の操作</p>
+
+<p>プログラムの起動後, 出てきたダイアログボックス内の &quot;Protein&quot; と書かれている箇所のチェックを入れ, OK ボタンをクリック. 系の境界と計算したペプチド分子が表示される. 上部 &quot;Display&quot; メニューの &quot;Animate&quot; を選択. 下にダイアログボックスが出現する.  ▶▶ボタンをクリックするとペプチドの動く様子が見られる.</p></li>
+</ol></li>
+</ol>
+
+<h3><a name="openmx"></a>OpenMX</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/openmx/work にサンプルファイルが格納されています。</li>
+<li><p>実行例</p>
+
+<ol>
+<li><p>実行用ディレクトリの作成とインプットのコピー</p>
+
+<pre><code>mkdir openmx
+cp /usr/share/openmx/work/Methane.dat openmx
+cd openmx
+</code></pre></li>
+<li><p>OpenMX の実行</p>
+
+<pre><code>openmx Methane.dat
+</code></pre></li>
+<li><p>結果の確認</p>
+
+<p><a href="http://www.openmx-square.org/openmx_man3.7/node16.html">http://www.openmx-square.org/openmx_man3.7/node16.html</a> に掲載されている結果と比較</p></li>
+</ol></li>
+</ol>
+
+<h3><a name="smash"></a>SMASH</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/smash/example にサンプルファイルが格納されています.</li>
+<li><p>実行例</p>
+
+<p>以下の例では, アントラセン(C14H10)の Hatree-Fock 法(6-31G 基底)によるエネルギー計算と, その HOMO 及び LUMO の可視化を実行します. 可視化には, SMASH に付属するsmash-vtk-generator と, オープンソースソフトウェア ParaView を使用します.</p>
+
+<ol>
+<li><p>実行用ディレクトリの作成とインプットのコピー</p>
+
+<pre><code>mkdir smash
+cd smash
+cp /usr/share/smash/example/anthracene.inp .
+</code></pre></li>
+<li><p>SMASHの実行</p>
+
+<pre><code>smash &lt; anthracene.inp &gt; anthracene.out
+</code></pre>
+
+<p>アウトプットファイル anthracene.out とチェックポイントファイル anthracene.chk が生成されます. 計算結果は, アウトプットはテキストファイルで開く事で確認できます. 内容は, 計算条件, 原子座標, 基底関数, SCF 繰り返し計算過程, 軌道エネルギー, 軌道係数です.</p></li>
+<li><p>表示したい軌道の vtk ファイル(anthracene-HOMO.vtk と anthracene-LUMO.vtk)を作成</p>
+
+<pre><code>smash-vtk-generator anthracene.chk anthracene-HOMO.vtk MO HOMO
+smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
+</code></pre></li>
+<li>左下のメニューから ParaView Viewer を起動</li>
+<li>File メニューから Load State を選択し, /usr/share/smash/vtk/mo-view.pvsm を開く.</li>
+<li>新たに現れたウィンドウで anthracene-HOMO.vtk を開くと, HOMO が表示されます.</li>
+<li>LUMO を表示したいときは, /usr/share/smash/vtk/mo-view.pvsm を開いた後, anthracene-LUMO.vtk を開く</li>
+</ol></li>
+</ol>
+
+<p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/SMASH">SMASHの情報</a>」をご覧ください.</p>
+
+<h3><a name="xtapp"></a>xTAPP &amp; TAPIOCA</h3>
+
+<ol>
+<li>サンプルファイルは, それぞれ下記のディレクトリに格納されています.
+
+<ul>
+<li>xTAPPのサンプル: /usr/share/xtapp/sample</li>
+<li>TAPIOCAのサンプル: /usr/share/tapioca/sample</li>
+</ul></li>
+<li><p>実行例</p>
+
+<ol>
+<li><p>サンプル実行用のディレクトリを作成</p>
+
+<pre><code>mkdir $HOME/xtapp
+</code></pre></li>
+<li><p>サンプル用のシェルスクリプトをコピー</p>
+
+<pre><code>cp /usr/share/xtapp/check/* $HOME/xtapp
+cd $HOME/xtapp
+</code></pre></li>
+<li><p>実行例1: シリコンの計算<br>
+si.shを実行し, シリコンの計算を行います.</p>
+
+<pre><code>sh si.sh
+</code></pre></li>
+<li><p>実行例2: αクオーツの計算<br>
+quartz.shを実行し, αクオーツの計算を行います.</p>
+
+<pre><code>sh quartz.sh
+</code></pre></li>
+<li><p>TAPIOCAの起動
+ TAPIOCAは, コマンドラインからtapiocaと入力するか, 左下のメニューから起動(MateriApps &gt; tapioca)します.</p>
+
+<p><img src="GettingStarted-tapioca.jpg" alt="boot"></p></li>
+</ol></li>
+</ol>
+
+<p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/xTAPPTapioca">xTAPP &amp; TAPIOCAの情報</a>」をご覧ください.</p>
+</body>
+</html>
