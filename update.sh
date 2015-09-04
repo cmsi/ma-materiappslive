@@ -10,14 +10,22 @@ CSS="https://gist.githubusercontent.com/andyferra/2554919/raw/2e66cabdafe1c9a7f3
 rm -rf $SRCDIR
 git clone $REPOSITORY $SRCDIR
 
-wget -O materiappslive/wiki/github.css "$CSS"
+wget -O github.css "$CSS"
 
 cat << EOF > materiappslive/wiki/GettingStarted.html
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>MateriApps LIVE!: はじめの一歩</title>
-  <link rel="stylesheet" href="github.css" type="text/css" />
+  <style type="text/css">
+<!--
+EOF
+
+cat github.css >> materiappslive/wiki/GettingStarted.html
+
+cat << EOF >> materiappslive/wiki/GettingStarted.html
+-->
+  </style>
 </head>
 <body>
 EOF
@@ -34,7 +42,15 @@ cat << EOF > materiappslive/wiki/GettingStarted-en.html
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>MateriApps LIVE!: Getting Started</title>
-  <link rel="stylesheet" href="github.css" type="text/css" />
+  <style type="text/css">
+<!--
+EOF
+
+cat github.css >> materiappslive/wiki/GettingStarted-en.html
+
+cat << EOF >> materiappslive/wiki/GettingStarted-en.html
+-->
+  </style>
 </head>
 <body>
 EOF
@@ -53,7 +69,15 @@ cat << EOF > materiappslive/wiki/ApplicationsAndTools.html
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>MateriApps LIVE!: MateriApps LIVE!に含まれるアプリケーションとツール</title>
-  <link rel="stylesheet" href="github.css" type="text/css" />
+  <style type="text/css">
+<!--
+EOF
+
+cat github.css >> materiappslive/wiki/ApplicationsAndTools.html
+
+cat << EOF >> materiappslive/wiki/ApplicationsAndTools.html
+-->
+  </style>
 </head>
 <body>
 EOF
@@ -70,7 +94,15 @@ cat << EOF > materiappslive/wiki/ApplicationsAndTools-en.html
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>MateriApps LIVE!: Applications and Tools in MateriApps LIVE!</title>
-  <link rel="stylesheet" href="github.css" type="text/css" />
+  <style type="text/css">
+<!--
+EOF
+
+cat github.css >> materiappslive/wiki/ApplicationsAndTools-en.html
+
+cat << EOF >> materiappslive/wiki/ApplicationsAndTools-en.html
+-->
+  </style>
 </head>
 <body>
 EOF
