@@ -335,19 +335,9 @@ pre {
 
 <h2><a name="usage"></a>3. アプリケーション毎の情報</h2>
 
-<p>各アプリのMaterApps LIVE!上での使用方法は, <a href="https://github.com/cmsi/MateriAppsLive/wiki">MateriApps LIVE! Wiki</a>の「アプリケーションごとの情報」に記載されています. アプリのより詳細な情報は, MateriAppsの各アプリの説明をご覧ください . ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について説明します.</p>
+<p>各アプリのMaterApps LIVE!上での使用方法は, <a href="https://github.com/cmsi/MateriAppsLive/wiki">MateriApps LIVE! Wiki</a>の「アプリケーションごとの情報」に記載されています. アプリのより詳細な情報は, MateriAppsの各アプリの説明をご覧ください . ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#hphi">HPhi</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について説明します.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR</h3>
-
-<ol>
-<li><p>セットアップ方法</p>
-
-<p>AkaiKKRに関しては, 既にセットアップされているため特に作業は必要ありません. ただし, 以下のライセンス事項を遵守ください.</p></li>
-</ol>
-
-<blockquote>
-<p>This AkaiKKR binary package is built and distributed for trial use on MateriApps LIVE! . For extensive use or production run, please register yourself at the AkaiKKR official web site and use the recent official source code.</p>
-</blockquote>
 
 <ol>
 <li><p>実行例(Coの例)</p>
@@ -398,6 +388,66 @@ python tutorial2full.py
 </ol>
 
 <p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/ALPS">ALPSの情報</a>」をご覧ください.</p>
+
+<h3><a name="bsa"></a>BSA</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/bsa/Sample にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行</p>
+
+<pre><code>$ new_bfss /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test.op 2&gt;test.log
+$ new_bfss -c /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test_mc.op 2&gt;test_mc.log
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="http://kenjiharada.github.io/BSA/index_cc2.html">BSA公式ページ</a>をご覧ください.</p>
+
+<h3><a name="dsqss"></a>DSQSS</h3>
+
+<ol>
+<li><a href="https://github.com/qmc/dsqss/wiki/%E5%AE%9F%E8%A1%8C%E6%96%B9%E6%B3%95">実行方法</a> および <a href="https://github.com/qmc/dsqss/wiki/%E8%A8%88%E7%AE%97%E4%BE%8B">計算例</a> が公式のwiki に用意されています。</li>
+<li><p>単純なサンプルとして、S=1/2 反強磁性ハイゼンベルグダイマーの計算をおこないます。</p>
+
+<ol>
+<li><p>（局所）ハミルトニアンを設定</p>
+
+<ul>
+<li>S=1/2, J=-0.5 (反強磁性), H=0 （ゼロ磁場）</li>
+<li><p>格子が周期境界条件になり、ダイマーだとボンドが2本になるので、Jを半分にしていることに注意</p>
+
+<pre><code>$ hamgen_H 1 -0.5 0.0
+$ dla_alg
+</code></pre></li>
+</ul></li>
+<li><p>格子+逆温度を設定</p>
+
+<ul>
+<li><p>D=1次元, L=2, 逆温度beta=10.0</p>
+
+<pre><code>$ lattgene 1 2 10.0
+</code></pre></li>
+</ul></li>
+<li><p>モンテカルロサンプル数などが書かれた入力ファイルの雛形をコピーしてくる</p>
+
+<pre><code>    $ cp /usr/share/dsqss/samples/manual_run/qmc.inp.org qmc.inp
+</code></pre></li>
+<li><p>計算を実行</p>
+
+<pre><code>$ dla qmc.inp
+</code></pre></li>
+<li><p>計算結果（エネルギー）を出力</p>
+
+<ul>
+<li>平均値と統計誤差（エラーバー）の組が得られる</li>
+<li><p>出力されるエネルギーがサイトあたりのものであることに注意</p>
+
+<pre><code>$ grep ene sample.log.000
+</code></pre></li>
+</ul></li>
+</ol></li>
+</ol>
+
+<p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/DSQSS">DSQSSの情報</a>」をご覧ください.</p>
 
 <h3><a name="ermod"></a>ERmod</h3>
 
@@ -487,6 +537,20 @@ chmod +x demo
 <p>プログラムの起動後, 出てきたダイアログボックス内の &quot;Protein&quot; と書かれている箇所のチェックを入れ, OK ボタンをクリック. 系の境界と計算したペプチド分子が表示される. 上部 &quot;Display&quot; メニューの &quot;Animate&quot; を選択. 下にダイアログボックスが出現する.  ▶▶ボタンをクリックするとペプチドの動く様子が見られる.</p></li>
 </ol></li>
 </ol>
+
+<h3><a name="hphi"></a>HPhi</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/hphi/samples にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行: 反強磁性 S=1/2 Heisenberg chain を Lanczos 法で解く</p>
+
+<pre><code>$ cp -rp /usr/share/hphi/samples/Standard/Spin/HeisenbergChain .
+$ cd HeisenbergChain
+$ HPhi -s StdFace.def
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://github.com/QLMS/HPhi">HPhi公式ページ</a>をご覧ください.</p>
 
 <h3><a name="openmx"></a>OpenMX</h3>
 

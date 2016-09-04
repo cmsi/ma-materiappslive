@@ -335,19 +335,9 @@ When you find other problems, please report the environment of your machine (mod
 
 <h2><a name="usage"></a>3. Information of each application</h2>
 
-<p>Directions for use the applications on MaterApps LIVE! is available at <a href="https://github.com/cmsi/MateriAppsLive/wiki">MateriApps LIVE! Wiki</a>. For more detailed information, please refer to the MateriApps page of each application. In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
+<p>Directions for use the applications on MaterApps LIVE! is available at <a href="https://github.com/cmsi/MateriAppsLive/wiki">MateriApps LIVE! Wiki</a>. For more detailed information, please refer to the MateriApps page of each application. In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#hphi">HPhi</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR (formerly called Machikaneyama2002)</h3>
-
-<ol>
-<li><p>How to setup AkaiKKR</p>
-
-<p>No additional setup is needed. Please observe the followint license upon using AkaiKKR.</p></li>
-</ol>
-
-<blockquote>
-<p>This AkaiKKR binary package is built and distributed for trial use on MateriApps LIVE! . For extensive use or production run, please register yourself at the AkaiKKR official web site and use the recent official source code.</p>
-</blockquote>
 
 <ol>
 <li><p>Example (Co)</p>
@@ -398,6 +388,65 @@ python tutorial2full.py
 </ol>
 
 <p>For more detailed information, please look at &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/ALPS">ALPS Information</a>&quot; in MateriApp LIVE! wiki.</p>
+
+<h3><a name="bsa"></a>BSA</h3>
+
+<ol>
+<li>Tutorials: Sample files are available in /usr/share/bsa/Sample</li>
+<li><p>Example</p>
+
+<pre><code>$ new_bfss /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test.op 2&gt;test.log
+$ new_bfss -c /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test_mc.op 2&gt;test_mc.log
+</code></pre></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="http://kenjiharada.github.io/BSA/index_cc2.html">BSA Official Page</a>.</p>
+
+<h3><a name="dsqss"></a>DSQSS</h3>
+
+<ol>
+<li><a href="https://github.com/qmc/dsqss/wiki/%E5%AE%9F%E8%A1%8C%E6%96%B9%E6%B3%95">How to run</a> and <a href="https://github.com/qmc/dsqss/wiki/%E8%A8%88%E7%AE%97%E4%BE%8B">Examples</a> are available (in Japanese) in the DSQSS official wiki.</li>
+<li><p>For the simplest example, perform directed loop algorithm for S=1/2 antiferromagnetic Heisenberg dimer.</p>
+
+<ol>
+<li><p>Set up (local) Hamiltonian </p>
+
+<ul>
+<li>S=1/2, J=-0.5 (antiferro), H=0 (zero field)</li>
+<li><p>Due to the periodic boundary condition, let the interaction J be -0.5 instead of -1.0.</p>
+
+<pre><code>$ hamgen_H 1 -0.5 0.0
+$ dla_alg
+</code></pre></li>
+</ul></li>
+<li><p>Set up lattice (including inverse temperature)</p>
+
+<ul>
+<li><p>D=1, L=2, beta=10.0</p>
+
+<pre><code>$ lattgene 1 2 10.0
+</code></pre></li>
+</ul></li>
+<li><p>Copy an input file from <code>/usr/share/dsqss/samples/manual_run/qmc.inp.org</code></p>
+
+<pre><code>    $ cp /usr/share/dsqss/samples/manual_run/qmc.inp.org qmc.inp
+</code></pre></li>
+<li><p>Perfome simulation</p>
+
+<pre><code>$ dla qmc.inp
+</code></pre></li>
+<li><p>Check calculated energy per site</p>
+
+<ul>
+<li><p>Expectation value and statistical error will be obtained</p>
+
+<pre><code>$ grep ene sample.log.000
+</code></pre></li>
+</ul></li>
+</ol></li>
+</ol>
+
+<p>For more detailed information, please look at &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/DSQSS">DSQSS Information</a>&quot; in MateriApp LIVE! wiki.</p>
 
 <h3><a name="ERmod"></a>ERmod</h3>
 
@@ -486,6 +535,20 @@ chmod +x demo
 <p>After ngmx starts up, check the “Protein” on the popping dialog box and click the OK button. The boundary of the system and the calculated peptide molecule will display. Choose “Animate” inside “Display” menu on the upper menu bar. A dialog box will display on the bottom of the window. Click &quot;&gt;&gt;&quot; button and you will watch the move of the peptide molecule.</p></li>
 </ol></li>
 </ol>
+
+<h3><a name="hphi"></a>HPhi</h3>
+
+<ol>
+<li>Tutorials: Sample files are available in /usr/share/hphi/samples</li>
+<li><p>Example: Solve antiferromagnetic S=1/2 Heisenberg chain by the Lanczos method</p>
+
+<pre><code>$ cp -rp /usr/share/hphi/samples/Standard/Spin/HeisenbergChain .
+$ cd HeisenbergChain
+$ HPhi -s StdFace.def
+</code></pre></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="https://github.com/QLMS/HPhi">HPhi Official Page</a>.</p>
 
 <h3><a name="openmx"></a>OpenMX</h3>
 
