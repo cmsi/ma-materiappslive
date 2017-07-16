@@ -291,51 +291,23 @@ pre {
 
 <p>このドキュメントの最新版は <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted">https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted</a> にて公開されています.</p>
 
-<ol>
-<li><a href="ApplicationsAndTools.html">インストールされているソフト</a></li>
-<li><a href="#boot">MateriApps LIVE!の起動方法</a></li>
-<li><a href="#usage">MateriApps LIVE!上でのアプリの使用方法</a></li>
-</ol>
+<h2>MateriApps LVIE!にインストールされているアプリ</h2>
 
-<p>初めての方へ
-「<a href="#boot">2. MateriApps LIVE!の起動方法</a>」に従い起動してください. <strong>操作を誤るとご使用中のOSが上書きされる恐れがあります. 十分ご注意ください.</strong> </p>
+<p>「<a href="https://github.com/cmsi/MateriAppsLive/wiki/ApplicationsAndTools">MateriApps LIVE! に含まれるアプリケーションとツール</a>」をご覧ください.</p>
 
-<h2><a name="boot"></a>2. MateriApps LIVE!の起動方法</h2>
+<h2>MateriApps LIVE!の起動方法</h2>
 
-<p>以下では, USBメモリからブートする方法を説明します. VirtualBoxでの, MateriApps LIVE! OVA版の使い方については、<a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova">MateriApps LIVE! OVA版</a>をご覧ください.</p>
-
-<ol>
-<li><p>PCの電源を切った状態でMateriApps LIVE! USBを差し込みます.</p>
-
-<p><img src="GettingStarted-boot1.jpg" alt="boot"></p></li>
-<li><p>ブートデバイスメニューを開きます.</p>
+<p>MateriApps LIVE!は以下の方法で利用可能です.</p>
 
 <ul>
-<li>ブートデバイスメニューを開く方法は, 各PCの環境に依存します. 多くのPCでは, BIOS起動時に画面にブートデバイスメニューを開くためのキー(F2, F12など)の説明が表示されますので, そのキーを押すことで開くことができます.</li>
-<li>Mac OS Xでは, [option (alt)]キーを押し続けることで開きます.</li>
-<li>Mac OS Xでは画像の乱れ及び, ブートが出来ないバージョンが確認されています. 詳細は, <a href="https://github.com/cmsi/MateriAppsLive/wiki/KnownProblems">https://github.com/cmsi/MateriAppsLive/wiki/KnownProblems</a>, <a href="https://github.com/cmsi/MateriAppsLive/wiki/MacBook">https://github.com/cmsi/MateriAppsLive/wiki/MacBook</a>をご覧ください. また, 上記バージョン以外で起動・未起動の確認をされた場合は, <a href="http://ma.cms-initiative.jp">MateriApps</a>の下にある「お問い合わせ」よりバージョン情報をお知らせください.</li>
-</ul></li>
-<li><p>ブートデバイスの一覧からUSBメモリを選択し起動します.</p></li>
-<li><p>MateriApps LIVE!の起動メニューから, 「Live (amd64 LANG=en KBD=jp)」を選択し, [enter]キーを押します. 英語環境, 英語版キーボードをご利用の場合は, amd64 LANG=en, KBD=usを選択してください.</p>
-
-<ul>
-<li><strong>「Advanced options」メニュー内のInstall, Graphical installは, 決して選択しないでください . HDDの内容が消去され, 既存の環境がDebian LINUX環境で上書きされてしまいます.</strong></li>
+<li>MateriApps LIVE! VirtualBox版: VirtualBox仮想化アプリにMateriApps LIVE!仮想ハードディスクイメージ(OVA)をインポートし, 仮想マシン上で起動する. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedOVA">起動方法</a>]</li>
+<li>MateriApps LIVE! ブート用USB: MateriApps LIVE! ブートイメージが格納されたUSBメモリから直接ブートする. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedUSB">起動方法</a>]</li>
+<li>MateriApps LIVE! ブート用USB: MateriApps LIVE! ブートイメージが格納されたUSBメモリから直接ブートした後、インストーラを起動してPCのハードディスクにインストールする. <strong>現在のハードディスクの内容は上書き消去されることに注意.</strong></li>
 </ul>
 
-<p><img src="GettingStarted-boot2.jpg" alt="boot"></p></li>
-<li><p>一分程度でDebian/GNU Linuxが起動し, デスクトップ画面があらわれます.</p></li>
-<li><p>画面左下のメニューから, 「Accessories」-「LXTerminal」を選択します.</p>
+<h2>MateriApps LIVE!上でのアプリの使用方法</h2>
 
-<p><img src="GettingStarted-boot4.jpg" alt="boot"></p></li>
-<li><p>各アプリを使用するためのターミナルが起動します.</p>
-
-<p><img src="GettingStarted-boot5.jpg" alt="boot"></p></li>
-<li><p>MateriApps LIVE!の終了は, 画面右下の赤いボタンをクリックし, 「Shutdown」を選択します. ホームディレクトリなどに保存されたファイルはUSBメモリに退避されるので, 次回の起動時にも使うことができます.</p></li>
-</ol>
-
-<h2><a name="usage"></a>3. アプリケーション毎の情報</h2>
-
-<p>各アプリのMaterApps LIVE!上での使用方法は, <a href="https://github.com/cmsi/MateriAppsLive/wiki">MateriApps LIVE! Wiki</a>の「アプリケーションごとの情報」に記載されています. アプリのより詳細な情報は, MateriAppsの各アプリの説明をご覧ください . ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#hphi">HPhi</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について説明します.</p>
+<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#hphi">HPhi</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR</h3>
 
@@ -516,7 +488,7 @@ evince hysteresis.eps
 <li>チュートリアル: /usr/share/gromacs/tutor にサンプルファイルが格納されています.</li>
 <li><p>実行例</p>
 
-<p>以下では, 水溶媒中のペプチド分子の分子動力学シミュレーションで, 1) 構造ファイルの作成, 2) 水溶媒の導入, 3) エネルギーー最小化計算, 4) ペプチド分子を固定しての水分子についての分子動力学シミュレーション, 5) 水溶媒中のペプチドの分子動力学シミュレーション(本番), 6) 可視化ソフト ngmx を使用した結果の可視化を順に実行する. </p>
+<p>以下では, 水溶媒中のペプチド分子の分子動力学シミュレーションで, 1) 構造ファイルの作成, 2) 水溶媒の導入, 3) エネルギー最小化計算, 4) ペプチド分子を固定しての水分子についての分子動力学シミュレーション, 5) 水溶媒中のペプチドの分子動力学シミュレーション(本番), 6) 可視化ソフト ngmx を使用した結果の可視化を順に実行する. </p>
 
 <ol>
 <li><p>実行用ディレクトリの作成とインプットのコピー</p>
@@ -550,7 +522,21 @@ $ HPhi -s StdFace.def
 </code></pre></li>
 </ol>
 
-<p>より詳しい情報は、<a href="https://github.com/QLMS/HPhi">HPhi公式ページ</a>をご覧ください.</p>
+<p>より詳しい情報は、<a href="http://ma.cms-initiative.jp/ja/listapps/hphi">MateriApps HPhiページ</a>をご覧ください.</p>
+
+<h3><a name="mvmc"></a>mVMC</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/mvmc/sample にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行: 反強磁性 S=1/2 Heisenberg chain</p>
+
+<pre><code>$ cp -rp /usr/share/mvmc/sample/Standard/Spin/HeisenbergChain .
+$ cd HeisenbergChain
+$ vmc -s StdFace.def
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="http://ma.cms-initiative.jp/ja/listapps/mvmc">MateriApps mVMCページ</a>をご覧ください.</p>
 
 <h3><a name="openmx"></a>OpenMX</h3>
 
