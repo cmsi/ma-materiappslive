@@ -291,51 +291,23 @@ pre {
 
 <p>The latest version of this document is available at <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted-en">https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted-en</a>.</p>
 
-<ol>
-<li><a href="ApplicationsAndTools-en.html">Installed Applications</a></li>
-<li><a href="#boot">How to run MateriApps LIVE!</a></li>
-<li><a href="#usage">How to use MateriApps LIVE! Applications</a></li>
-</ol>
+<h2>Application Software installed in MateriApps LIVE!</h2>
 
-<p>CAUTION: Please follow the procedures written in the section &quot;<a href="#boot">2. How to run MateriApps LIVE!</a>&quot;. Incorrect procedures may damage your operation system.</p>
+<p>Please refer to &quot;<a href="ApplicationsAndTools-en.html">Applications and Tools in MateriApps LIVE!</a>&quot;.</p>
 
-<h2><a name="boot"></a>2. How to run MateriApps LIVE!</h2>
+<h2>How to start MateriApps LIVE!</h2>
 
-<p>In the followings, we explain the way to boot MateriApps LIVE! from USB stick. Please refer to <a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova">MteriApps LIVE! OVA version</a>, for the usage of MateriApps LIVE! OVA version in VirtualBox.</p>
-
-<ol>
-<li><p>Insert the MateriApps LIVE! USB into a USB port after power of your computer is turned off.</p>
-
-<p><img src="GettingStarted-boot1.jpg" alt="boot"></p></li>
-<li><p>Open a boot device menu. </p>
+<p>MateriApps LIVE! can be used in the following ways.</p>
 
 <ul>
-<li>A method for opening the boot device menu depends on your computational environment. Usually, the boot device menu opens by pressing a F2 or F12 button during startup of your computer.</li>
-<li>For Mac OS X, the boot device menu opens by pressing [option (Alt)] key.</li>
-<li>For some models of Mac machines or versions of Mac OS X, there is a known problem that the boot menu does not open even by pressing [option (Alt)] key. For more information, please access to the following website:  <a href="https://github.com/cmsi/MateriAppsLive/wiki/KnownProblems">https://github.com/cmsi/MateriAppsLive/wiki/KnownProblems</a>, <a href="https://github.com/cmsi/MateriAppsLive/wiki/MacBook">https://github.com/cmsi/MateriAppsLive/wiki/MacBook</a>.<br>
-When you find other problems, please report the environment of your machine (models, and versions of the Mac OS) to us.</li>
-</ul></li>
-<li><p>Select and launch the USB memory in the list of the boot devices.</p></li>
-<li><p>Select [Live (amd64 LANG=en KBD=us)] in the start screen and press the [Enter] key.</p>
-
-<ul>
-<li><strong>CAUTION: DO NOT select [Install, Graphical install] in [Advanced options]. This procedure deletes all data in your HDD and overwrites Debian Linux onto your operation system.</strong></li>
+<li>MateriApps LIVE! VirtualBox Edition: Import MateriApps LIVE! virtual hard-disk image (OVA) into VirtualBox and boot on virtual machine. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedOVA-en">How to Start</a>]</li>
+<li>MateriApps LIVE! bootable USB memory stick: Boot directly from USB memory stick including MateriApps LIVE!  boot image. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedUSB-en">How to Start</a>]</li>
+<li>MateriApps LIVE! bootable USB memory stick: After booting from USB memory stick including MateriApps LIVE! boot image and install on hard-disk of PC by using installer. <strong>Please note that the present contents on hard disk will be destroyed.</strong></li>
 </ul>
 
-<p><img src="GettingStarted-boot2.jpg" alt="boot"></p></li>
-<li><p>Debian/GNU Linux starts in a few minutes, and the desktop screen appears.</p></li>
-<li><p>Select [Accessories]-[LXTerminal] from the menu bar at the lower-left corner of the desktop.</p>
+<h2>How to use MateriApps LIVE! Applications</h2>
 
-<p><img src="GettingStarted-boot4.jpg" alt="boot"></p></li>
-<li><p>The applications is started on this terminal.</p>
-
-<p><img src="GettingStarted-boot5.jpg" alt="boot"></p></li>
-<li><p>To shut down MateriApps LIVE!., press the red button which is located at the lower-right corner of the desktop and select [Shutdown]. You can keep your data files saved in the home directory, and can use them also in the next time you launch the system. The files are stored in the USB memory.</p></li>
-</ol>
-
-<h2><a name="usage"></a>3. Information of each application</h2>
-
-<p>Directions for use the applications on MaterApps LIVE! is available at <a href="https://github.com/cmsi/MateriAppsLive/wiki">MateriApps LIVE! Wiki</a>. For more detailed information, please refer to the MateriApps page of each application. In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#hphi">HPhi</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
+<p>In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#hphi">HPhi</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR (formerly called Machikaneyama2002)</h3>
 
@@ -548,7 +520,21 @@ $ HPhi -s StdFace.def
 </code></pre></li>
 </ol>
 
-<p>For more detailed information, please look at <a href="https://github.com/QLMS/HPhi">HPhi Official Page</a>.</p>
+<p>For more detailed information, please look at <a href="http://ma.cms-initiative.jp/ja/listapps/hphi">MateriApps HPhi Page</a>.</p>
+
+<h3><a name="mvmc"></a>mVMC</h3>
+
+<ol>
+<li>Tutorials: Sample files are available in /usr/share/mvmc/sample</li>
+<li><p>Example: Antiferromagnetic S=1/2 Heisenberg chain</p>
+
+<pre><code>$ cp -rp /usr/share/mvmc/sample/Standard/Spin/HeisenbergChain .
+$ cd HeisenbergChain
+$ vmc -s StdFace.def
+</code></pre></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="http://ma.cms-initiative.jp/ja/listapps/mvmc">MateriApps mVMC Page</a>.</p>
 
 <h3><a name="openmx"></a>OpenMX</h3>
 
