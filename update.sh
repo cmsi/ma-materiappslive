@@ -39,7 +39,7 @@ cat << EOF >> files/wiki/GettingStarted.html
 <body>
 EOF
 
-$GFM --readme $SRCDIR/GettingStarted.md | sed 's%<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted-en">English</a>%<a href="GettingStarted-en.html">English</a>%' | sed 's%<a href="ApplicationsAndTools">%<a href="ApplicationsAndTools.html">%' >> files/wiki/GettingStarted.html
+$GFM --readme $SRCDIR/GettingStarted.md >> files/wiki/GettingStarted.html
 
 cat << EOF >> files/wiki/GettingStarted.html
 </body>
@@ -64,7 +64,7 @@ cat << EOF >> files/wiki/GettingStarted-en.html
 <body>
 EOF
 
-$GFM --readme $SRCDIR/GettingStarted-en.md | sed 's%<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted">日本語</a>%<a href="GettingStarted.html">日本語</a>%' | sed 's%<a href="ApplicationsAndTools-en">%<a href="ApplicationsAndTools-en.html">%' >> files/wiki/GettingStarted-en.html
+$GFM --readme $SRCDIR/GettingStarted-en.md >> files/wiki/GettingStarted-en.html
 
 cat << EOF >> files/wiki/GettingStarted-en.html
 </body>
@@ -91,7 +91,7 @@ cat << EOF >> files/wiki/ApplicationsAndTools.html
 <body>
 EOF
 
-$GFM --readme $SRCDIR/ApplicationsAndTools.md | sed 's%<a href="https://github.com/cmsi/MateriAppsLive/wiki/ApplicationsAndTools-en">English</a>%<a href="ApplicationsAndTools-en.html">English</a>%' >> files/wiki/ApplicationsAndTools.html
+$GFM --readme $SRCDIR/ApplicationsAndTools.md >> files/wiki/ApplicationsAndTools.html
 
 cat << EOF >> files/wiki/ApplicationsAndTools.html
 </body>
@@ -116,9 +116,17 @@ cat << EOF >> files/wiki/ApplicationsAndTools-en.html
 <body>
 EOF
 
-$GFM --readme $SRCDIR/ApplicationsAndTools-en.md | sed 's%<a href="https://github.com/cmsi/MateriAppsLive/wiki/ApplicationsAndTools">日本語</a>%<a href="ApplicationsAndTools.html">日本語</a>%' >> files/wiki/ApplicationsAndTools-en.html
+$GFM --readme $SRCDIR/ApplicationsAndTools-en.md >> files/wiki/ApplicationsAndTools-en.html
 
 cat << EOF >> files/wiki/ApplicationsAndTools-en.html
 </body>
 </html>
 EOF
+
+FILES="files/wiki/GettingStarted.html files/wiki/GettingStarted-en.html files/wiki/ApplicationsAndTools.html files/wiki/ApplicationsAndTools-en.html"
+for file in $FILES; do
+  sed -i 's%<a href="GettingStarted-en">%<a href="GettingStarted-en.html">%' $file
+  sed -i 's%<a href="GettingStarted">%<a href="GettingStarted.html">%' $file
+  sed -i 's%<a href="ApplicationsAndTools-en">%<a href="ApplicationsAndTools-en.html">%' $file
+  sed -i 's%<a href="ApplicationsAndTools">%<a href="ApplicationsAndTools.html">%' $file
+done
