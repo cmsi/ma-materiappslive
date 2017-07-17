@@ -71,7 +71,7 @@ cat << EOF >> files/wiki/GettingStarted-en.html
 </html>
 EOF
 
-cp -fp $SRCDIR/GettingStarted-*.jpg files/wiki/
+cp -fp $SRCDIR/GettingStarted-alps.jpg $SRCDIR/GettingStarted-tapioca.jpg files/wiki/
 
 cat << EOF > files/wiki/ApplicationsAndTools.html
 <html>
