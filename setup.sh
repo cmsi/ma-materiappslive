@@ -6,4 +6,5 @@ rm -rf $BUILD_DIR
 set -x
 
 mkdir -p $BUILD_DIR
-cp -frp $SCRIPT_DIR/applications $SCRIPT_DIR/debian $SCRIPT_DIR/etc $SCRIPT_DIR/wiki $BUILD_DIR
+cp -frp $SCRIPT_DIR/debian $BUILD_DIR
+cp -frp $SCRIPT_DIR/files/* $BUILD_DIR
