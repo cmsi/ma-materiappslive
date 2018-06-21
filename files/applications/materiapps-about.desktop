@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Categories=X-MateriApps;
 Type=Application
-Exec=iceweasel http://cmsi.github.io/MateriAppsLive/
+Exec=iceweasel https://cmsi.github.io/MateriAppsLive/
 Name=About MateriApps LIVE!
 Name[ja]=MateriApps LIVE!について

@@ -2,5 +2,5 @@
 Encoding=UTF-8
 Categories=X-Database;
 Type=Application
-Exec=iceweasel http://www.rcsb.org/pdb/
+Exec=firefox http://www.rcsb.org/pdb/
 Name=PDB: RCSB Protain Data Bank
