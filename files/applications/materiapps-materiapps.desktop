@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Categories=X-MateriApps;
 Type=Application
-Exec=iceweasel http://ma.cms-initiative.jp/
+Exec=firefox https://ma.issp.u-tokyo.ac.jp/
 Name=MateriApps Website
 Name[ja]=MateriAppsウェブページ

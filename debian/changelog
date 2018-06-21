@@ -1,3 +1,15 @@
+materiappslive (20170717-3) unstable; urgency=low
+
+  * Update contents
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Thu, 21 Jun 2018 09:57:13 +0900
+
+materiappslive (20170717-2) unstable; urgency=low
+
+  * Add Stretch support
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Fri, 02 Mar 2018 17:35:33 +0900
+
 materiappslive (20170717-1) unstable; urgency=low
 
   * Updated Wiki contents
@@ -7,7 +19,7 @@ materiappslive (20170717-1) unstable; urgency=low
 materiappslive (20170503-1) unstable; urgency=low
 
   * Added suport for Jessie
-  * Updated Wiki contents 
+  * Updated Wiki contents
 
  -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Wed, 03 May 2017 00:51:40 +0900
 
