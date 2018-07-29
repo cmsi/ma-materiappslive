@@ -305,8 +305,8 @@ pre {
 
 <ul>
 <li>MateriApps LIVE! VirtualBox Edition: Import MateriApps LIVE! virtual hard-disk image (OVA) into VirtualBox and boot on virtual machine. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedOVA-en">How to Start</a>]</li>
-<li>MateriApps LIVE! bootable USB memory stick: Boot directly from USB memory stick including MateriApps LIVE!  boot image. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedUSB-en">How to Start</a>]</li>
-<li>MateriApps LIVE! bootable USB memory stick: After booting from USB memory stick including MateriApps LIVE! boot image and install on hard-disk of PC by using installer. <strong>Please note that the present contents on hard disk will be destroyed.</strong></li>
+<li>(version 1 only) MateriApps LIVE! bootable USB memory stick: Boot directly from USB memory stick including MateriApps LIVE!  boot image. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedUSB-en">How to Start</a>]</li>
+<li>(version 1 only) MateriApps LIVE! bootable USB memory stick: After booting from USB memory stick including MateriApps LIVE! boot image and install on hard-disk of PC by using installer. <strong>Please note that the present contents on hard disk will be destroyed.</strong></li>
 </ul>
 
 <h2>How to use MateriApps LIVE! Applications</h2>
@@ -516,11 +516,11 @@ chmod +x demo
 
 <ol>
 <li>Tutorials: Sample files are available in /usr/share/hphi/samples</li>
-<li><p>Example: Solve antiferromagnetic S=1/2 Heisenberg chain by the Lanczos method</p>
+<li><p>Example: Solve 4x4-square lattice S=1/2 antiferromagnetic Heisenberg model by the LOBCG method</p>
 
-<pre><code>$ cp -rp /usr/share/hphi/samples/Standard/Spin/HeisenbergChain .
-$ cd HeisenbergChain
-$ HPhi -s StdFace.def
+<pre><code>$ cp -rp /usr/share/hphi/samples/CG/Heisenberg .
+$ cd Heisenberg
+$ HPhi -s stan.in
 </code></pre></li>
 </ol>
 
@@ -589,10 +589,10 @@ cp /usr/share/smash/example/anthracene.inp .
 <pre><code>  smash-vtk-generator anthracene.chk anthracene-HOMO.vtk MO HOMO
   smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
 </code></pre></li>
-<li>Start Parview Viewer from the bottom right menu.</li>
-<li>Select Load State from File menu and open the /usr/share/smash/vtk/mo-view.pvsm file.</li>
+<li>Bottom right menu &gt; Education &gt; ParView Client</li>
+<li>Select Load State from File menu and open the /usr/share/smash/visual/mo-view.pvsm file.</li>
 <li>Open the anthracene-HOMO.vtk file, and you can see the contour map of HOMO.</li>
-<li>To display LUMO, open the anthracene-LUMO.vtk file after opening the /usr/share/smash/vtk/mo-view.pvsm file.</li>
+<li>To display LUMO, open the anthracene-LUMO.vtk file after opening the /usr/share/smash/visual/mo-view.pvsm file.</li>
 </ol></li>
 </ol>
 
@@ -630,7 +630,7 @@ Execute quartz.sh</p>
 <pre><code>sh quartz.sh
 </code></pre></li>
 <li><p>Execution of TAPIOCA
-Type &#39;tapioca&#39; in the terminal or execute from bottom-left menu (MateriApps &gt; tapioca).</p>
+Type &#39;tapioca&#39; in the terminal or execute from bottom-left menu (MateriApps &gt; Tapioca).</p>
 
 <p><img src="GettingStarted-tapioca.jpg" alt="boot"></p></li>
 </ol></li>
