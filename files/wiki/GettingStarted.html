@@ -305,8 +305,8 @@ pre {
 
 <ul>
 <li>MateriApps LIVE! VirtualBox版: VirtualBox仮想化アプリにMateriApps LIVE!仮想ハードディスクイメージ(OVA)をインポートし, 仮想マシン上で起動する. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedOVA">起動方法</a>]</li>
-<li>MateriApps LIVE! ブート用USB: MateriApps LIVE! ブートイメージが格納されたUSBメモリから直接ブートする. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedUSB">起動方法</a>]</li>
-<li>MateriApps LIVE! ブート用USB: MateriApps LIVE! ブートイメージが格納されたUSBメモリから直接ブートした後、インストーラを起動してPCのハードディスクにインストールする. <strong>現在のハードディスクの内容は上書き消去されることに注意.</strong></li>
+<li>(version 1 のみ) MateriApps LIVE! ブート用USB: MateriApps LIVE! ブートイメージが格納されたUSBメモリから直接ブートする. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedUSB">起動方法</a>]</li>
+<li>(version 1 のみ) MateriApps LIVE! ブート用USB: MateriApps LIVE! ブートイメージが格納されたUSBメモリから直接ブートした後、インストーラを起動してPCのハードディスクにインストールする. <strong>現在のハードディスクの内容は上書き消去されることに注意.</strong></li>
 </ul>
 
 <h2>MateriApps LIVE!上でのアプリの使用方法</h2>
@@ -518,11 +518,11 @@ chmod +x demo
 
 <ol>
 <li>チュートリアル: /usr/share/hphi/samples にサンプルファイルが格納されています.</li>
-<li><p>サンプルの実行: 反強磁性 S=1/2 Heisenberg chain を Lanczos 法で解く</p>
+<li><p>サンプルの実行: 4x4正方格子S=1/2反強磁性Heisenberg模型をLOBCG法で解く</p>
 
-<pre><code>$ cp -rp /usr/share/hphi/samples/Standard/Spin/HeisenbergChain .
-$ cd HeisenbergChain
-$ HPhi -s StdFace.def
+<pre><code>$ cp -rp /usr/share/hphi/samples/CG/Heisenberg .
+$ cd Heisenberg
+$ HPhi -s stan.in
 </code></pre></li>
 </ol>
 
@@ -591,10 +591,10 @@ cp /usr/share/smash/example/anthracene.inp .
 <pre><code>smash-vtk-generator anthracene.chk anthracene-HOMO.vtk MO HOMO
 smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
 </code></pre></li>
-<li>左下のメニューから ParaView Viewer を起動</li>
-<li>File メニューから Load State を選択し, /usr/share/smash/vtk/mo-view.pvsm を開く.</li>
+<li>左下のメニュー &gt; Education &gt; ParaView Client を起動</li>
+<li>File メニューから Load State を選択し, /usr/share/smash/visual/mo-view.pvsm を開く.</li>
 <li>新たに現れたウィンドウで anthracene-HOMO.vtk を開くと, HOMO が表示されます.</li>
-<li>LUMO を表示したいときは, /usr/share/smash/vtk/mo-view.pvsm を開いた後, anthracene-LUMO.vtk を開く</li>
+<li>LUMO を表示したいときは, /usr/share/smash/visual/mo-view.pvsm を開いた後, anthracene-LUMO.vtk を開く</li>
 </ol></li>
 </ol>
 
@@ -632,7 +632,7 @@ quartz.shを実行し, αクオーツの計算を行います.</p>
 <pre><code>sh quartz.sh
 </code></pre></li>
 <li><p>TAPIOCAの起動
- TAPIOCAは, コマンドラインからtapiocaと入力するか, 左下のメニューから起動(MateriApps &gt; tapioca)します.</p>
+ TAPIOCAは, コマンドラインからtapiocaと入力するか, 左下のメニューから起動(MateriApps &gt; Tapioca)します.</p>
 
 <p><img src="GettingStarted-tapioca.jpg" alt="boot"></p></li>
 </ol></li>
