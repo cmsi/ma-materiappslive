@@ -311,7 +311,7 @@ pre {
 
 <h2>How to use MateriApps LIVE! Applications</h2>
 
-<p>In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#hphi">HPhi</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
+<p>In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR (formerly called Machikaneyama2002)</h3>
 
@@ -424,49 +424,6 @@ $ dla_alg
 
 <p>For more detailed information, please look at &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/DSQSS">DSQSS Information</a>&quot; in MateriApp LIVE! wiki.</p>
 
-<h3><a name="ERmod"></a>ERmod</h3>
-
-<ol>
-<li><p>Tutorial: Sample files are available in /usr/share/ermod/example/gromacs.</p></li>
-<li><p>In the following example, the solvation free energy of ethanol in water is calculated from sample configuration files of GROMACS.</p>
-
-<ol>
-<li><p>Create a working directory and copy a set of input files into the directory</p>
-
-<pre><code>mkdir ermod
-cp -r /usr/share/ermod/example/gromacs/* ermod
-cd ermod
-</code></pre></li>
-<li><p>Execute a command &quot;gen_structure&quot;.</p>
-
-<pre><code> /usr/share/ermod/tools/gromacs/gen_structure --top etohsolution.top
-</code></pre>
-
-<p>User is asked which molecule is the solute. In the example case, ethanol is the solute, so you should type &quot;Ethanol&quot;. You can find new directories named &quot;soln&quot; and &quot;refs&quot;.</p></li>
-<li><p>Calculate an energy distribution function between solute and solvent from the MD trajectory in solution system (including ethanol and water).</p>
-
-<pre><code>cd soln
-/usr/share/ermod/tools/gromacs/gen_input --traj ../solution_run.xtc --log ../solution_run.log
-ermod
-</code></pre></li>
-<li><p>A set of structures derived from the MD trajectory in solute system (only ethanol in vacuum) inserts into the snapshots (coordinates) of MD trajectory in solvent system (only water).</p>
-
-<pre><code>cd ../refs
-/usr/share/ermod/tools/gromacs/gen_input --traj ../solvent_run.xtc --log ../solvent_run.log --flexible ../solute_run.xtc
-ermod
-</code></pre>
-
-<p>User obtains an energy distribution function from the insertion operation. Please note that the calculation on this step needs a little time to finish. If user wants to accelerate the calculation, add an option of &quot;maxins=100&quot; (the number is set arbitrarily) in &quot;parameters_er&quot;. This option represents the number of solute insertions per one snapshot of solvent trajectory (the default number is 1000). If user reduces this number, the calculaton finishes faster, but the result is less accuracy.</p></li>
-<li><p>Calculate the solvation free energy. (The last line of output is the final estimate of the solvation free energy.)</p>
-
-<pre><code>cd ..
-slvfe
-</code></pre></li>
-</ol></li>
-</ol>
-
-<p>For more detailed information, tutorial, and theory, please refer to <a href="http://sourceforge.net/p/ermod/wiki/Home/">http://sourceforge.net/p/ermod/wiki/Home/</a>.</p>
-
 <h3><a name="fearm"></a>feram</h3>
 
 <p>feram is a fast molecular dynamics (MD) simulator for ferroelectrics.  More information is available at feram homepage <a href="http://loto.sourceforge.net/feram/">http://loto.sourceforge.net/feram/</a>.</p>
@@ -484,34 +441,6 @@ evince hysteresis.eps
 </code></pre></li>
 </ol>
 
-<h3><a name="gromacs"></a>Gromacs</h3>
-
-<ol>
-<li>Tutorial: Sample files are available in /usr/share/gromacs/tutor.</li>
-<li><p>Example</p>
-
-<p>In the following example, we will execute molecular dynamics simulation on a peptide molecule in water solvent by turns; 1) making a structure file, 2) introducing water solvent, 3) energy minimization calculations, 4) molecular dynamics simulation on water molecules with fixing the peptide molecule, 5) molecular dynamics simulation of the peptide molecule in water solvent, 6) visualization of simulation result using ngmx, the visualization software containing in GROMACS. </p>
-
-<ol>
-<li><p>Make an executing directory and copy the input files.</p>
-
-<pre><code>mkdir gromacs
-cp -r /usr/share/gromacs/tutor/* gromacs
-cd gromacs/gmxdemo
-chmod +x demo
-</code></pre></li>
-<li><p>Execute the demo script.</p>
-
-<pre><code>./demo
-</code></pre>
-
-<p>The structure data of peptide is in cpeptide.pdb that is placed on the same directory. Information about commands used in each step of calculation is available by opening the demo script by a text editor. After starting up the demo script, push the Enter key following the examination on the terminal. Finally, the visualization software ngmx will display. </p></li>
-<li><p>Operate the visualization software ngmx.</p>
-
-<p>After ngmx starts up, check the “Protein” on the popping dialog box and click the OK button. The boundary of the system and the calculated peptide molecule will display. Choose “Animate” inside “Display” menu on the upper menu bar. A dialog box will display on the bottom of the window. Click &quot;&gt;&gt;&quot; button and you will watch the move of the peptide molecule.</p></li>
-</ol></li>
-</ol>
-
 <h3><a name="hphi"></a>HPhi</h3>
 
 <ol>
@@ -525,6 +454,21 @@ $ HPhi -s stan.in
 </ol>
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/app/339">MateriApps HPhi Page</a>.</p>
+
+<h3><a name="lammps"></a>LAMMPS</h3>
+
+<ol>
+<li>Tutorials: Sample files are available in /usr/share/doc/lammps-doc/examples</li>
+<li><p>Example: NaCl using the EIM potential</p>
+
+<pre><code>$ cp -rp /usr/share/doc/lammps-doc/examples/eim .
+$ cd eim
+$ gunzip *.gz
+$ lammps -in in.eim
+</code></pre></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/613">MateriApps LAMMPS Page</a>.</p>
 
 <h3><a name="mvmc"></a>mVMC</h3>
 

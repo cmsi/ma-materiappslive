@@ -311,7 +311,7 @@ pre {
 
 <h2>MateriApps LIVE!上でのアプリの使用方法</h2>
 
-<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ermod">ERmod</a>, <a href="#feram">feram</a>, <a href="#gromacs">Gromacs</a>, <a href="#hphi">HPhi</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
+<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR</h3>
 
@@ -425,49 +425,6 @@ $ dla_alg
 
 <p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/DSQSS">DSQSSの情報</a>」をご覧ください.</p>
 
-<h3><a name="ermod"></a>ERmod</h3>
-
-<ol>
-<li>チュートリアル: /usr/share/ermod/example/gromacs にサンプルファイルが格納されています. </li>
-<li><p>実行例: 以下では, Gromacs用のサンプル(水中エタノール)の溶媒和自由エネルギーを計算します. </p>
-
-<ol>
-<li><p>実行用ディレクトリの作成とインプットのコピー</p>
-
-<pre><code>mkdir ermod
-cp -r /usr/share/ermod/example/gromacs/* ermod
-cd ermod
-</code></pre></li>
-<li><p>gen_structure の実行</p>
-
-<pre><code>/usr/share/ermod/tools/gromacs/gen_structure --top etohsolution.top
-</code></pre>
-
-<p>&quot;Molecule types in topology file: Ethanol SOL&quot; と出て, 溶質はどちらか聞かれるので, Ethanol と入力. soln ディレクトリと refs ディレクトリが出来ます. </p></li>
-<li><p>溶液系のMDトラジェクトリから溶質ー溶媒間の2体相互作用エネルギー分布を計算</p>
-
-<pre><code>cd soln
-/usr/share/ermod/tools/gromacs/gen_input --traj ../solution_run.xtc --log ../solution_run.log
-ermod
-</code></pre></li>
-<li><p>溶質のMDトラジェクトリから構造を取り出し, テスト粒子として挿入することで, 溶質ー溶媒間のエネルギー分布を計算</p>
-
-<pre><code>cd ../refs
-/usr/share/ermod/tools/gromacs/gen_input --traj ../solvent_run.xtc --log ../solvent_run.log --flexible ../solute_run.xtc
-ermod
-</code></pre>
-
-<p>refs の計算はけっこう時間がかかるので, 早めに終わらせたい場合は, parameters_er ファイル中の upljcut = 12, の次の行に maxins = 100 などと書いてください(数字は任意). maxins は溶媒の 1 スナップショットに対する溶質の挿入回数で, デフォルトでは 1000 です. これを減らすことで計算時間は速くなりますが, 精度は落ちます. </p></li>
-<li><p>溶媒和自由エネルギーの計算 (出力の一番最後が自由エネルギーの最終的な計算結果)</p>
-
-<pre><code>cd ..
-slvfe
-</code></pre></li>
-</ol></li>
-</ol>
-
-<p>ERmod の動かし方や理論など、詳細については <a href="http://sourceforge.net/p/ermod/wiki/Home/">http://sourceforge.net/p/ermod/wiki/Home/</a> をご覧ください.</p>
-
 <h3><a name="fearm"></a>feram</h3>
 
 <p>feramは強誘電体の高速分子動力学シミュレーターです．
@@ -486,34 +443,6 @@ evince hysteresis.eps
 </code></pre></li>
 </ol>
 
-<h3><a name="gromacs"></a>Gromacs</h3>
-
-<ol>
-<li>チュートリアル: /usr/share/gromacs/tutor にサンプルファイルが格納されています.</li>
-<li><p>実行例</p>
-
-<p>以下では, 水溶媒中のペプチド分子の分子動力学シミュレーションで, 1) 構造ファイルの作成, 2) 水溶媒の導入, 3) エネルギー最小化計算, 4) ペプチド分子を固定しての水分子についての分子動力学シミュレーション, 5) 水溶媒中のペプチドの分子動力学シミュレーション(本番), 6) 可視化ソフト ngmx を使用した結果の可視化を順に実行する. </p>
-
-<ol>
-<li><p>実行用ディレクトリの作成とインプットのコピー</p>
-
-<pre><code>mkdir gromacs
-cp -r /usr/share/gromacs/tutor/* gromacs
-cd gromacs/gmxdemo
-chmod +x demo
-</code></pre></li>
-<li><p>デモの実行</p>
-
-<pre><code>./demo
-</code></pre>
-
-<p>ペプチドの構造データは demo と同じディレクトリの cpeptide.pdb にある. 計算の各段階 のコマンドについてはスクリプト demo を テキストファイルで開く事で確認できる. demo 実行後, 説明にしたがって Enter を押していくとシミュレーションが終了し, 最後に可視化ソフト ngmx の画面が表示される. </p></li>
-<li><p>可視化ソフト ngmx の操作</p>
-
-<p>プログラムの起動後, 出てきたダイアログボックス内の &quot;Protein&quot; と書かれている箇所のチェックを入れ, OK ボタンをクリック. 系の境界と計算したペプチド分子が表示される. 上部 &quot;Display&quot; メニューの &quot;Animate&quot; を選択. 下にダイアログボックスが出現する.  ▶▶ボタンをクリックするとペプチドの動く様子が見られる.</p></li>
-</ol></li>
-</ol>
-
 <h3><a name="hphi"></a>HPhi</h3>
 
 <ol>
@@ -527,6 +456,21 @@ $ HPhi -s stan.in
 </ol>
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/339">MateriApps HPhiページ</a>をご覧ください.</p>
+
+<h3><a name="lammps"></a>LAMMPS</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/doc/lammps-doc/examples にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行: NaCl using the EIM potential</p>
+
+<pre><code>$ cp -rp /usr/share/doc/lammps-doc/examples/eim .
+$ cd eim
+$ gunzip *.gz
+$ lammps -in in.eim
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/596">MateriApps LAMMPSページ</a>をご覧ください.</p>
 
 <h3><a name="mvmc"></a>mVMC</h3>
 
