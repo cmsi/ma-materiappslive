@@ -311,6 +311,9 @@ pre {
 <li><p>Quantum ESPRESSO</p>
 
 <p>擬ポテンシャル法と平面波基底を用いた第一原理計算ライブラリ... [<a href="https://ma.issp.u-tokyo.ac.jp/app/720">MateriApps</a>]</p></li>
+<li><p>SALMON</p>
+
+<p>時間依存密度汎関数理論に基づく実時間・実空間グリッド法を用いた、光励起電子ダイナミクスシミュレータ... [<a href="https://ma.issp.u-tokyo.ac.jp/app/321">MateriApps</a>]</p></li>
 <li><p>xTAPP</p>
 
 <p>擬ポテンシャル法と平面波基底を用いた第一原理計算ライブラリ... [<a href="https://ma.issp.u-tokyo.ac.jp/app/738">MateriApps</a>] [<a href="https://github.com/cmsi/MateriAppsLive/wiki/xTAPPTapioca">Wiki</a>]</p></li>
@@ -335,6 +338,9 @@ pre {
 <li><p>ERmod</p>
 
 <p>ソフト分子集団系の自由エネルギーを計算するソフトウェア... [<a href="https://ma.issp.u-tokyo.ac.jp/app/272">MateriApps</a>]</p></li>
+<li><p>Gromacs</p>
+
+<p>生体分子向けにデザインされたオープンソースの分子動力学パッケージ... [<a href="https://ma.issp.u-tokyo.ac.jp/app/663">MateriApps</a>]</p></li>
 <li><p>LAMMPS</p>
 
 <p>オープンソースの汎用古典分子動力学アプリケーション... [<a href="https://ma.issp.u-tokyo.ac.jp/app/596">MateriApps</a>]</p></li>
@@ -350,7 +356,14 @@ pre {
 <p>注意事項: 全てのツール、アプリケーション、Pythonモジュールにはパスが通っているので、あらかじめalpsvars.shを読み込む必要はありません。Pythonもalpspythonではなく普通のpythonを使ってください。</p></li>
 <li><p>DCore</p>
 
-<p>動的平均場理論による多体量子計算を行うためのツール... [<a href="https://ma.issp.u-tokyo.ac.jp/app/1003">MateriApps</a>]</p></li>
+<p>動的平均場理論による多体量子計算を行うためのツール... [<a href="https://ma.issp.u-tokyo.ac.jp/app/1003">MateriApps</a>]</p>
+
+<p>注意事項: 後処理用のツール(openmx2dcore.py, respack2wan90)は/usr/share/dcore/toolにインストールされています。</p></li>
+<li><p>DDMRG</p>
+
+<p>一次元強相関電子系の励起ダイナミクスを総合的に解析する強相関格子模型シミュレータ... [<a href="https://ma.issp.u-tokyo.ac.jp/app/210">MateriApps</a>]</p>
+
+<p>注意事項: MateriApps LIVE! に含まれる DDMRG は、試用版という形で著者の許諾を得た上で収録・配布されています。本格的に利用する場合は、著者に連絡を取り最新版のソースコードを入手してください</p></li>
 <li><p>DSQSS</p>
 
 <p>格子上で定義された量子多体系の計算プログラム... [<a href="https://ma.issp.u-tokyo.ac.jp/app/171">MateriApps</a>][<a href="https://github.com/cmsi/MateriAppsLive/wiki/DSQSS">Wiki</a>]</p></li>
@@ -361,12 +374,12 @@ pre {
 
 <p>並列計算機に対応した数値厳密対角化法による有効模型ソルバーパッケージ... [<a href="https://ma.issp.u-tokyo.ac.jp/app/339">MateriApps</a>]</p>
 
-<p>注意事項: 後処理用のツール(corplot, fourier)は/usr/share/hphi/toolにインストールされています。</p></li>
+<p>注意事項: 後処理用のツール(greenr2k他)は/usr/share/hphi/toolにインストールされています。</p></li>
 <li><p>mVMC</p>
 
 <p>多体量子系の有効模型の基底状態を変分モンテカルロ法により求めるパッケージ... [<a href="https://ma.issp.u-tokyo.ac.jp/app/81">MateriApps</a>]</p>
 
-<p>注意事項: 実行バイナリはvmc, vmcdryという名前でインストールされています。後処理用のツール(corplot, fourier)は/usr/share/mvmc/toolにインストールされています。</p></li>
+<p>注意事項: 実行バイナリはvmc, vmcdryという名前でインストールされています。前処理・後処理用のツール(greenr2k, respack2wan90.py, UHF, wout2geom.sh)は/usr/share/mvmc/toolにインストールされています。</p></li>
 <li><p>TRIQS/CTHYB</p>
 
 <p>連続時間量子モンテカルロ法によるオープンソースの不純物問題ソルバー... [<a href="https://ma.issp.u-tokyo.ac.jp/app/481">MateriApps</a>]</p></li>

@@ -311,7 +311,7 @@ pre {
 
 <h2>MateriApps LIVE!上でのアプリの使用方法</h2>
 
-<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
+<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR</h3>
 
@@ -377,6 +377,20 @@ $ new_bfss -c /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &
 </ol>
 
 <p>より詳しい情報は、<a href="http://kenjiharada.github.io/BSA/index_cc2.html">BSA公式ページ</a>をご覧ください.</p>
+
+<h3><a name="ddmrg"></a>DDMRG (Dynamical DMRG)</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/ddmrg/example にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行</p>
+
+<pre><code>$ cp -rp /usr/share/ddmrg/example .
+$ cd example
+$ DDMRG
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="http://www.r-ccs.riken.jp/labs/cms/DMRG/Dynamical_DMRG.html">DDMRG公式ページ</a>をご覧ください.</p>
 
 <h3><a name="dsqss"></a>DSQSS</h3>
 
@@ -478,7 +492,7 @@ $ lammps -in in.eim
 <li>チュートリアル: /usr/share/mvmc/sample にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行: 反強磁性 S=1/2 Heisenberg chain</p>
 
-<pre><code>$ cp -rp /usr/share/mvmc/sample/Standard/Spin/HeisenbergChain .
+<pre><code>$ cp -rp /usr/share/mvmc/samples/Standard/Spin/HeisenbergChain .
 $ cd HeisenbergChain
 $ vmc -s StdFace.def
 </code></pre></li>
@@ -508,6 +522,20 @@ cd openmx
 <p><a href="http://www.openmx-square.org/openmx_man3.7/node16.html">http://www.openmx-square.org/openmx_man3.7/node16.html</a> に掲載されている結果と比較</p></li>
 </ol></li>
 </ol>
+
+<h3><a name="salmon"></a>SALMON</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/salmon/examples にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行:</p>
+
+<pre><code>$ cp -rp /usr/share/examples .
+$ cd examples/C2H2
+$ salmon.cpu &lt; C2H2_gs.inp
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/321">MateriApps SALMONページ</a>をご覧ください.</p>
 
 <h3><a name="smash"></a>SMASH</h3>
 
