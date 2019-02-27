@@ -289,7 +289,7 @@ pre {
 
 <p>[<a href="GettingStarted-en.html">English</a>/日本語]</p>
 
-<p>このドキュメントの最新版は <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted">https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted</a> にて公開されています.</p>
+<p>このドキュメントの最新版は <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted">https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted</a> にて公開されています</p>
 
 <h2>困った時は…</h2>
 
@@ -297,21 +297,15 @@ pre {
 
 <h2>MateriApps LVIE!にインストールされているアプリ</h2>
 
-<p>「<a href="ApplicationsAndTools.html">MateriApps LIVE! に含まれるアプリケーションとツール</a>」をご覧ください.</p>
+<p>「<a href="ApplicationsAndTools.html">MateriApps LIVE! に含まれるアプリケーションとツール</a>」をご覧ください</p>
 
 <h2>MateriApps LIVE!の起動方法</h2>
 
-<p>MateriApps LIVE!は以下の方法で利用可能です.</p>
-
-<ul>
-<li>MateriApps LIVE! VirtualBox版: VirtualBox仮想化アプリにMateriApps LIVE!仮想ハードディスクイメージ(OVA)をインポートし, 仮想マシン上で起動する. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedOVA">起動方法</a>]</li>
-<li>(version 1 のみ) MateriApps LIVE! ブート用USB: MateriApps LIVE! ブートイメージが格納されたUSBメモリから直接ブートする. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedUSB">起動方法</a>]</li>
-<li>(version 1 のみ) MateriApps LIVE! ブート用USB: MateriApps LIVE! ブートイメージが格納されたUSBメモリから直接ブートした後、インストーラを起動してPCのハードディスクにインストールする. <strong>現在のハードディスクの内容は上書き消去されることに注意.</strong></li>
-</ul>
+<p>MateriApps LIVE!は、VirtualBox仮想化アプリにMateriApps LIVE!仮想ハードディスクイメージ(OVA)をインポートし, 仮想マシン上で起動することで利用可能となります[<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedOVA">起動方法</a>]</p>
 
 <h2>MateriApps LIVE!上でのアプリの使用方法</h2>
 
-<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
+<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR</h3>
 
@@ -523,13 +517,41 @@ cd openmx
 </ol></li>
 </ol>
 
+<h3><a name="espresso"></a>Quantum ESPRESSO</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/espresso/examples にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行:</p>
+
+<pre><code>$ cp -rp /usr/share/espresso/examples .
+$ cd examples/PW/examples/example01
+$ ./run_example
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/720">MateriApps Quantum ESPRESSOページ</a>をご覧ください.</p>
+
+<h3><a name="respack"></a>RESPACK</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/respack/sample にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行:</p>
+
+<pre><code>$ cp -rp /usr/share/respack/sample/xtapp/Al.fcc.6x6x6 .
+$ cd Al.fcc.6x6x6
+$ sh Al.sh
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/767">MateriApps RESPACKページ</a>をご覧ください.</p>
+
 <h3><a name="salmon"></a>SALMON</h3>
 
 <ol>
 <li>チュートリアル: /usr/share/salmon/examples にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行:</p>
 
-<pre><code>$ cp -rp /usr/share/examples .
+<pre><code>$ cp -rp /usr/share/salmon/examples .
 $ cd examples/C2H2
 $ salmon.cpu &lt; C2H2_gs.inp
 </code></pre></li>

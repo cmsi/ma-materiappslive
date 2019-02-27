@@ -289,29 +289,23 @@ pre {
 
 <p>[English/<a href="GettingStarted.html">日本語</a>]</p>
 
-<p>The latest version of this document is available at <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted-en">https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted-en</a>.</p>
+<p>The latest version of this document is available at <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted-en">https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted-en</a></p>
 
 <h2>Need help?</h2>
 
-<p>Feel free to ask in <a href="https://github.com/cmsi/MateriAppsLive-forum/wiki">MateriApps LIVE! Users Forum</a>.</p>
+<p>Feel free to ask in <a href="https://github.com/cmsi/MateriAppsLive-forum/wiki">MateriApps LIVE! Users Forum</a></p>
 
 <h2>Application Software installed in MateriApps LIVE!</h2>
 
-<p>Please refer to &quot;<a href="ApplicationsAndTools-en.html">Applications and Tools in MateriApps LIVE!</a>&quot;.</p>
+<p>Please refer to &quot;<a href="ApplicationsAndTools-en.html">Applications and Tools in MateriApps LIVE!</a>&quot;</p>
 
 <h2>How to start MateriApps LIVE!</h2>
 
-<p>MateriApps LIVE! can be used in the following ways.</p>
-
-<ul>
-<li>MateriApps LIVE! VirtualBox Edition: Import MateriApps LIVE! virtual hard-disk image (OVA) into VirtualBox and boot on virtual machine. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedOVA-en">How to Start</a>]</li>
-<li>(version 1 only) MateriApps LIVE! bootable USB memory stick: Boot directly from USB memory stick including MateriApps LIVE!  boot image. [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedUSB-en">How to Start</a>]</li>
-<li>(version 1 only) MateriApps LIVE! bootable USB memory stick: After booting from USB memory stick including MateriApps LIVE! boot image and install on hard-disk of PC by using installer. <strong>Please note that the present contents on hard disk will be destroyed.</strong></li>
-</ul>
+<p>MateriApps LIVE! can be used by importing MateriApps LIVE! virtual hard-disk image (OVA) into VirtualBox and boot on virtual machine [<a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedOVA-en">How to Start</a>]</p>
 
 <h2>How to use MateriApps LIVE! Applications</h2>
 
-<p>In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
+<p>In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR (formerly called Machikaneyama2002)</h3>
 
@@ -521,13 +515,41 @@ cd openmx
 </ol></li>
 </ol>
 
+<h3><a name="espresso"></a>Quantum ESPRESSO</h3>
+
+<ol>
+<li>Tutorial: Sample files are available in /usr/share/espresso/examples</li>
+<li><p>Example</p>
+
+<pre><code>$ cp -rp /usr/share/espresso/examples .
+$ cd examples/PW/examples/example01
+$ ./run_example
+</code></pre></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/740">MateriApps Quantum ESPRESSO Page</a>.</p>
+
+<h3><a name="respack"></a>RESPACK</h3>
+
+<ol>
+<li>Tutorial: Sample files are available in /usr/share/respack/sample.</li>
+<li><p>Example</p>
+
+<pre><code>$ cp -rp /usr/share/respack/sample/xtapp/Al.fcc.6x6x6 .
+$ cd Al.fcc.6x6x6
+$ sh Al.sh
+</code></pre></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/772">MateriApps RESPACK Page</a>.</p>
+
 <h3><a name="salmon"></a>SALMON</h3>
 
 <ol>
-<li><p>Tutorial: Sample files are available in /usr/share/salmon/examples.</p></li>
+<li>Tutorial: Sample files are available in /usr/share/salmon/examples.</li>
 <li><p>Example</p>
 
-<pre><code>$ cp -rp /usr/share/examples .
+<pre><code>$ cp -rp /usr/share/salmon/examples .
 $ cd examples/C2H2
 $ salmon.cpu &lt; C2H2_gs.inp
 </code></pre></li>
@@ -538,7 +560,7 @@ $ salmon.cpu &lt; C2H2_gs.inp
 <h3><a name="smash"></a>SMASH</h3>
 
 <ol>
-<li><p>Tutorial: Sample files are available in /usr/share/smash/example.</p></li>
+<li>Tutorial: Sample files are available in /usr/share/smash/example.</li>
 <li><p>Example</p>
 
 <p>In the following example, the Hartree-Fock energy calculation of Anthracene (C14H10) with the 6-31G basis set and the visualization of its HOMO and LUMO are performed. The smash-vtk-generator file attached in SMASH and open source software ParaView are required for visualization.</p>
