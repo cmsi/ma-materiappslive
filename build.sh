@@ -6,4 +6,4 @@ cd $BUILD_DIR
 dpkg-buildpackage -us -uc
 mv -f ../${PACKAGE}_${VERSION}_*.changes ../${PACKAGE}_${VERSION}.changes
 mkdir -p $TARGET_DIR
-mv -f ../${PACKAGE}_$VERSION_BASE* $TARGET_DIR
+mv -f ../${PACKAGE}_${VERSION}* $TARGET_DIR

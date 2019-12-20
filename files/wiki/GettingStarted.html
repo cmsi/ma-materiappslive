@@ -305,7 +305,7 @@ pre {
 
 <h2>MateriApps LIVE!上でのアプリの使用方法</h2>
 
-<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
+<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#dcore">DCore</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR</h3>
 
@@ -339,8 +339,8 @@ pre {
 <ol>
 <li><p>チュートリアルをコピー</p>
 
-<pre><code>cp -rp /usr/share/alps/tutorials/mc-02-susceptibilities $HOME
-cd $HOME/mc-02-susceptibilities
+<pre><code>cp -rp /usr/share/alps/tutorials/mc-02-susceptibilities .
+cd mc-02-susceptibilities
 </code></pre></li>
 <li><p>Pythonスクリプトを順番に実行</p>
 
@@ -371,6 +371,25 @@ $ new_bfss -c /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &
 </ol>
 
 <p>より詳しい情報は、<a href="http://kenjiharada.github.io/BSA/index_cc2.html">BSA公式ページ</a>をご覧ください.</p>
+
+<h3><a name="dcore"></a>DCore</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/doc/dcore/doc/tutorial にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行</p>
+
+<pre><code>$ cp -rp /usr/share/doc/dcore/doc/tutorial/square .
+$ cd square
+$ dcore_pre dmft_square.ini
+$ dcore dmft_square.ini --np 1
+$ dcore_check dmft_square.ini
+$ dcore_post dmft_square.ini --np 1
+$ cd post
+$ gnuplot -persistent square_akw.gp 
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/1003">MateriApps DCoreページ</a>をご覧ください.</p>
 
 <h3><a name="ddmrg"></a>DDMRG (Dynamical DMRG)</h3>
 
@@ -468,12 +487,11 @@ $ HPhi -s stan.in
 <h3><a name="lammps"></a>LAMMPS</h3>
 
 <ol>
-<li>チュートリアル: /usr/share/doc/lammps-doc/examples にサンプルファイルが格納されています.</li>
+<li>チュートリアル: /usr/share/lammps/examples にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行: NaCl using the EIM potential</p>
 
-<pre><code>$ cp -rp /usr/share/doc/lammps-doc/examples/eim .
+<pre><code>$ cp -rp /usr/share/lammps/examples/eim .
 $ cd eim
-$ gunzip *.gz
 $ lammps -in in.eim
 </code></pre></li>
 </ol>
