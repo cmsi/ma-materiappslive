@@ -315,13 +315,16 @@ pre {
 <ol>
 <li><p>Copy /usr/share/akaikkr/in.</p>
 
-<p>cp -rp /usr/share/akaikkr/in .</p></li>
+<pre><code>cp -rp /usr/share/akaikkr/in .
+</code></pre></li>
 <li><p>Make out and data directories</p>
 
-<p>mkdir out data</p></li>
+<pre><code>mkdir out data
+</code></pre></li>
 <li><p>Run AkaiKKR</p>
 
-<p>specx &lt; in/co</p></li>
+<pre><code>specx &lt; in/co
+</code></pre></li>
 </ol></li>
 </ol>
 
@@ -336,15 +339,17 @@ pre {
 <ol>
 <li><p>Copy tutorial files</p>
 
-<p>cp -rp /usr/share/alps/tutorials/mc-02-susceptibilities .
-   cd mc-02-susceptibilities</p></li>
+<pre><code>cp -rp /usr/share/alps/tutorials/mc-02-susceptibilities .
+cd mc-02-susceptibilities
+</code></pre></li>
 <li><p>Execute Python scripts</p>
 
-<p>python tutorial2a.py
-   python tutorial2b.py
-   python tutorial2c.py
-   python tutorial2d.py
-   python tutorial2full.py</p>
+<pre><code>python tutorial2a.py
+python tutorial2b.py
+python tutorial2c.py
+python tutorial2d.py
+python tutorial2full.py
+</code></pre>
 
 <p>At the end of each Python script, calculation results will be plotted.  The Python scripts finishes after closing the window by clicking the top-right &#39;X&#39; mark. By executing the last script, all the results will be plotted in one figure.</p>
 
@@ -360,8 +365,9 @@ pre {
 <li>Tutorials: Sample files are available in /usr/share/bsa/Sample</li>
 <li><p>Example</p>
 
-<p>new_bfss /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test.op 2&gt;test.log
-   new_bfss -c /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test_mc.op 2&gt;test_mc.log</p></li>
+<pre><code>new_bfss /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test.op 2&gt;test.log
+new_bfss -c /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test_mc.op 2&gt;test_mc.log
+</code></pre></li>
 </ol>
 
 <p>For more detailed information, please look at <a href="http://kenjiharada.github.io/BSA/index_cc2.html">BSA Official Page</a>.</p>
@@ -372,14 +378,15 @@ pre {
 <li>Tutorials: Sample files are available in /usr/share/doc/dcore/doc/tutorial</li>
 <li><p>Example</p>
 
-<p>cp -rp /usr/share/dcore/tutorial/square .
-   cd square
-   dcore_pre dmft_square.ini
-   dcore dmft_square.ini --np 1
-   dcore_check dmft_square.ini
-   dcore_post dmft_square.ini --np 1
-   cd post
-   gnuplot -persistent square_akw.gp </p></li>
+<pre><code>cp -rp /usr/share/dcore/tutorial/square .
+cd square
+dcore_pre dmft_square.ini
+dcore dmft_square.ini --np 1
+dcore_check dmft_square.ini
+dcore_post dmft_square.ini --np 1
+cd post
+gnuplot -persistent square_akw.gp 
+</code></pre></li>
 </ol>
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/1004">MateriApps DCore Page</a>.</p>
@@ -390,9 +397,10 @@ pre {
 <li>Tutorials: Sample files are available in /usr/share/ddmrg/example</li>
 <li><p>Example</p>
 
-<p>cp -rp /usr/share/ddmrg/example .
-   cd example
-   DDMRG</p></li>
+<pre><code>cp -rp /usr/share/ddmrg/example .
+cd example
+DDMRG
+</code></pre></li>
 </ol>
 
 <p>For more detailed information, please look at <a href="http://www.r-ccs.riken.jp/labs/cms/DMRG/Dynamical_DMRG_en.html">DDMRG Official Page</a>.</p>
@@ -410,28 +418,33 @@ pre {
 <li>S=1/2, J=-0.5 (antiferro), H=0 (zero field)</li>
 <li><p>Due to the periodic boundary condition, let the interaction J be -0.5 instead of -1.0.</p>
 
-<p>hamgen_H 1 -0.5 0.0
-  dla_alg</p></li>
+<pre><code>hamgen_H 1 -0.5 0.0
+dla_alg
+</code></pre></li>
 </ul></li>
 <li><p>Set up lattice (including inverse temperature)</p>
 
 <ul>
 <li><p>D=1, L=2, beta=10.0</p>
 
-<p>lattgene 1 2 10.0</p></li>
+<pre><code>lattgene 1 2 10.0
+</code></pre></li>
 </ul></li>
 <li><p>Copy an input file from <code>/usr/share/dsqss/samples/manual_run/qmc.inp.org</code></p>
 
-<p>cp /usr/share/dsqss/samples/manual_run/qmc.inp.org qmc.inp</p></li>
+<pre><code>cp /usr/share/dsqss/samples/manual_run/qmc.inp.org qmc.inp
+</code></pre></li>
 <li><p>Perfome simulation</p>
 
-<p>dla qmc.inp</p></li>
+<pre><code>dla qmc.inp
+</code></pre></li>
 <li><p>Check calculated energy per site</p>
 
 <ul>
 <li><p>Expectation value and statistical error will be obtained</p>
 
-<p>grep ene sample.log.000</p></li>
+<pre><code>grep ene sample.log.000
+</code></pre></li>
 </ul></li>
 </ol></li>
 </ol>
@@ -447,11 +460,12 @@ pre {
 <li><code>feram</code> command is placed in the search path. It can be executed as <code>feram foo123.feram</code> in LXTerminal.</li>
 <li><p>Example (hysteresis loop will be drawn after simulation for tens of minutes)</p>
 
-<p>cp -a /usr/share/feram/example/27example-BaTiO3-new-param-E_wave .
-   cd 27example-BaTiO3-new-param-E_wave
-   feram 360cos.feram 360sin.feram
-   ./hysteresis.gp
-   evince hysteresis.eps</p></li>
+<pre><code>cp -a /usr/share/feram/example/27example-BaTiO3-new-param-E_wave .
+cd 27example-BaTiO3-new-param-E_wave
+feram 360cos.feram 360sin.feram
+./hysteresis.gp
+evince hysteresis.eps
+</code></pre></li>
 </ol>
 
 <h3><a name="hphi"></a>HPhi</h3>
@@ -460,9 +474,10 @@ pre {
 <li>Tutorials: Sample files are available in /usr/share/hphi/samples</li>
 <li><p>Example: Solve 4x4-square lattice S=1/2 antiferromagnetic Heisenberg model by the LOBCG method</p>
 
-<p>cp -rp /usr/share/hphi/samples/CG/Heisenberg .
-   cd Heisenberg
-   HPhi -s stan.in</p></li>
+<pre><code>cp -rp /usr/share/hphi/samples/CG/Heisenberg .
+cd Heisenberg
+HPhi -s stan.in
+</code></pre></li>
 </ol>
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/app/339">MateriApps HPhi Page</a>.</p>
@@ -473,10 +488,11 @@ pre {
 <li>Tutorials: Sample files are available in /usr/share/lammps/examples</li>
 <li><p>Example: NaCl using the EIM potential</p>
 
-<p>mkdir eim
-   cp /usr/share/lammps/examples/eim/* eim
-   cd eim
-   lammps -in in.eim</p></li>
+<pre><code>mkdir eim
+cp /usr/share/lammps/examples/eim/* eim
+cd eim
+lammps -in in.eim
+</code></pre></li>
 </ol>
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/613">MateriApps LAMMPS Page</a>.</p>
@@ -487,9 +503,10 @@ pre {
 <li>Tutorials: Sample files are available in /usr/share/mvmc/sample</li>
 <li><p>Example: Antiferromagnetic S=1/2 Heisenberg chain</p>
 
-<p>cp -rp /usr/share/mvmc/samples/Standard/Spin/HeisenbergChain .
-   cd HeisenbergChain
-   vmc -s StdFace.def</p></li>
+<pre><code>cp -rp /usr/share/mvmc/samples/Standard/Spin/HeisenbergChain .
+cd HeisenbergChain
+vmc -s StdFace.def
+</code></pre></li>
 </ol>
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/app/81">MateriApps mVMC Page</a>.</p>
@@ -503,12 +520,14 @@ pre {
 <ol>
 <li><p>Make a directory for execution and copy an input file</p>
 
-<p>mkdir openmx
-  cp /usr/share/openmx/work/Methane.dat openmx
-  cd openmx</p></li>
+<pre><code>mkdir openmx
+cp /usr/share/openmx/work/Methane.dat openmx
+cd openmx
+</code></pre></li>
 <li><p>Run OpenMX</p>
 
-<p>openmx Methane.dat</p></li>
+<pre><code>openmx Methane.dat
+</code></pre></li>
 <li><p>Check of execution results</p>
 
 <p>Please compare the results with those on <a href="http://www.openmx-square.org/openmx_man3.7/node16.html">http://www.openmx-square.org/openmx_man3.7/node16.html</a>.</p></li>
@@ -521,9 +540,10 @@ pre {
 <li>Tutorial: Sample files are available in /usr/share/espresso/examples</li>
 <li><p>Example</p>
 
-<p>cp -rp /usr/share/espresso/examples .
-   cd examples/PW/examples/example01
-   ./run_example</p></li>
+<pre><code>cp -rp /usr/share/espresso/examples .
+cd examples/PW/examples/example01
+./run_example
+</code></pre></li>
 </ol>
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/740">MateriApps Quantum ESPRESSO Page</a>.</p>
@@ -534,9 +554,10 @@ pre {
 <li>Tutorial: Sample files are available in /usr/share/respack/sample.</li>
 <li><p>Example</p>
 
-<p>cp -rp /usr/share/respack/sample/xtapp/Al.fcc.6x6x6 .
-   cd Al.fcc.6x6x6
-   sh Al.sh</p></li>
+<pre><code>cp -rp /usr/share/respack/sample/xtapp/Al.fcc.6x6x6 .
+cd Al.fcc.6x6x6
+sh Al.sh
+</code></pre></li>
 </ol>
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/772">MateriApps RESPACK Page</a>.</p>
@@ -547,9 +568,10 @@ pre {
 <li>Tutorial: Sample files are available in /usr/share/salmon/examples.</li>
 <li><p>Example</p>
 
-<p>cp -rp /usr/share/salmon/examples .
-   cd examples/exercise_01_C2H2_gs
-   salmon.cpu &lt; C2H2_gs.inp</p></li>
+<pre><code>cp -rp /usr/share/salmon/examples .
+cd examples/exercise_01_C2H2_gs
+salmon.cpu &lt; C2H2_gs.inp
+</code></pre></li>
 </ol>
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/326">MateriApps SALMON Page</a>.</p>
@@ -565,17 +587,21 @@ pre {
 <ol>
 <li><p>Generate a directory for execution and copy the input file.</p>
 
-<p>mkdir smash
-  cd smash
-  cp /usr/share/smash/example/anthracene.inp .</p></li>
+<pre><code>mkdir smash
+cd smash
+cp /usr/share/smash/example/anthracene.inp .
+</code></pre></li>
 <li><p>Exectute SMASH.</p>
 
-<p>smash &lt; anthracene.inp &gt; anthracene.out
-After the execution, two files are generated, the output file &quot;anthracene.out&quot; and the checkpoint file &quot;anthracene.chk&quot;. The output file can be seen as a text file, which shows the computational conditions, atomic coordinates, basis functions, SCF processes, MO energies, and MO coefficients.</p></li>
+<pre><code>smash &lt; anthracene.inp &gt; anthracene.out
+</code></pre>
+
+<p>After the execution, two files are generated, the output file &quot;anthracene.out&quot; and the checkpoint file &quot;anthracene.chk&quot;. The output file can be seen as a text file, which shows the computational conditions, atomic coordinates, basis functions, SCF processes, MO energies, and MO coefficients.</p></li>
 <li><p>Generate vtk files for HOMO and LUMO (anthracene-HOMO.vtk and anthracene-LUMO.vtk).</p>
 
-<p>smash-vtk-generator anthracene.chk anthracene-HOMO.vtk MO HOMO
-  smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO</p></li>
+<pre><code>smash-vtk-generator anthracene.chk anthracene-HOMO.vtk MO HOMO
+smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
+</code></pre></li>
 <li>Bottom right menu &gt; Education &gt; ParView Client</li>
 <li>Select Load State from File menu and open the /usr/share/smash/visual/mo-view.pvsm file.</li>
 <li>Open the anthracene-HOMO.vtk file, and you can see the contour map of HOMO.</li>
@@ -599,19 +625,23 @@ After the execution, two files are generated, the output file &quot;anthracene.o
 <ol>
 <li><p>Make directory for execution</p>
 
-<p>mkdir $HOME/xtapp</p></li>
+<pre><code>mkdir $HOME/xtapp
+</code></pre></li>
 <li><p>Copy sample shell scripts</p>
 
-<p>cp /usr/share/xtapp/check/* $HOME/xtapp
-   cd $HOME/xtapp</p></li>
+<pre><code>cp /usr/share/xtapp/check/* $HOME/xtapp
+cd $HOME/xtapp
+</code></pre></li>
 <li><p>Example 1: simulation of silicon
 Execute si.sh</p>
 
-<p>sh si.sh</p></li>
+<pre><code>sh si.sh
+</code></pre></li>
 <li><p>Example 2: simulation of alpha-quarts
 Execute quartz.sh</p>
 
-<p>sh quartz.sh</p></li>
+<pre><code>sh quartz.sh
+</code></pre></li>
 <li><p>Execution of TAPIOCA
 Type &#39;tapioca&#39; in the terminal or execute from bottom-left menu (MateriApps &gt; Tapioca).</p>
 

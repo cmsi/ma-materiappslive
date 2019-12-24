@@ -315,13 +315,16 @@ pre {
 <ol>
 <li><p>/usr/share/akaikkr/in をコピー</p>
 
-<p>cp -rp /usr/share/akaikkr/in .</p></li>
+<pre><code>cp -rp /usr/share/akaikkr/in .
+</code></pre></li>
 <li><p>out ディレクトリと data ディレクトリを作成</p>
 
-<p>mkdir out data</p></li>
+<pre><code>mkdir out data
+</code></pre></li>
 <li><p>AkaiKKRを実行</p>
 
-<p>specx &lt; in/co</p></li>
+<pre><code>specx &lt; in/co
+</code></pre></li>
 </ol></li>
 </ol>
 
@@ -336,15 +339,17 @@ pre {
 <ol>
 <li><p>チュートリアルをコピー</p>
 
-<p>cp -rp /usr/share/alps/tutorials/mc-02-susceptibilities .
-   cd mc-02-susceptibilities</p></li>
+<pre><code>cp -rp /usr/share/alps/tutorials/mc-02-susceptibilities .
+cd mc-02-susceptibilities
+</code></pre></li>
 <li><p>Pythonスクリプトを順番に実行</p>
 
-<p>python tutorial2a.py
-   python tutorial2b.py
-   python tutorial2c.py
-   python tutorial2d.py
-   python tutorial2full.py</p>
+<pre><code>python tutorial2a.py
+python tutorial2b.py
+python tutorial2c.py
+python tutorial2d.py
+python tutorial2full.py
+</code></pre>
 
 <p>Pythonスクリプトを実行する毎に結果がプロットされます. プロットウィンドウの右上の×印をクリックしてウィンドウを閉じると, Pythonスクリプトが終了します. 最後のスクリプトを実行すると, それまでの計算結果がまとめてプロットされます.</p>
 
@@ -360,8 +365,9 @@ pre {
 <li>チュートリアル: /usr/share/bsa/Sample にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行</p>
 
-<p>new_bfss /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test.op 2&gt;test.log
-   new_bfss -c /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test_mc.op 2&gt;test_mc.log</p></li>
+<pre><code>new_bfss /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test.op 2&gt;test.log
+new_bfss -c /usr/share/bsa/Sample/Ising-square-Binder.dat 1 0.42 1 0.9 1 0.1 &gt; test_mc.op 2&gt;test_mc.log
+</code></pre></li>
 </ol>
 
 <p>より詳しい情報は、<a href="http://kenjiharada.github.io/BSA/index_cc2.html">BSA公式ページ</a>をご覧ください.</p>
@@ -372,14 +378,15 @@ pre {
 <li>チュートリアル: /usr/share/doc/dcore/doc/tutorial にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行</p>
 
-<p>cp -rp /usr/share/dcore/tutorial/square .
-   cd square
-   dcore_pre dmft_square.ini
-   dcore dmft_square.ini --np 1
-   dcore_check dmft_square.ini
-   dcore_post dmft_square.ini --np 1
-   cd post
-   gnuplot -persistent square_akw.gp </p></li>
+<pre><code>cp -rp /usr/share/dcore/tutorial/square .
+cd square
+dcore_pre dmft_square.ini
+dcore dmft_square.ini --np 1
+dcore_check dmft_square.ini
+dcore_post dmft_square.ini --np 1
+cd post
+gnuplot -persistent square_akw.gp 
+</code></pre></li>
 </ol>
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/1003">MateriApps DCoreページ</a>をご覧ください.</p>
@@ -390,9 +397,10 @@ pre {
 <li>チュートリアル: /usr/share/ddmrg/example にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行</p>
 
-<p>cp -rp /usr/share/ddmrg/example .
-   cd example
-   DDMRG</p></li>
+<pre><code>cp -rp /usr/share/ddmrg/example .
+cd example
+DDMRG
+</code></pre></li>
 </ol>
 
 <p>より詳しい情報は、<a href="http://www.r-ccs.riken.jp/labs/cms/DMRG/Dynamical_DMRG.html">DDMRG公式ページ</a>をご覧ください.</p>
@@ -410,29 +418,34 @@ pre {
 <li>S=1/2, J=-0.5 (反強磁性), H=0 （ゼロ磁場）</li>
 <li><p>格子が周期境界条件になり、ダイマーだとボンドが2本になるので、Jを半分にしていることに注意</p>
 
-<p>hamgen_H 1 -0.5 0.0
-  dla_alg</p></li>
+<pre><code>hamgen_H 1 -0.5 0.0
+dla_alg
+</code></pre></li>
 </ul></li>
 <li><p>格子+逆温度を設定</p>
 
 <ul>
 <li><p>D=1次元, L=2, 逆温度beta=10.0</p>
 
-<p>lattgene 1 2 10.0</p></li>
+<pre><code>lattgene 1 2 10.0
+</code></pre></li>
 </ul></li>
 <li><p>モンテカルロサンプル数などが書かれた入力ファイルの雛形をコピーしてくる</p>
 
-<p>cp /usr/share/dsqss/samples/manual_run/qmc.inp.org qmc.inp</p></li>
+<pre><code>cp /usr/share/dsqss/samples/manual_run/qmc.inp.org qmc.inp
+</code></pre></li>
 <li><p>計算を実行</p>
 
-<p>dla qmc.inp</p></li>
+<pre><code>dla qmc.inp
+</code></pre></li>
 <li><p>計算結果（エネルギー）を出力</p>
 
 <ul>
 <li>平均値と統計誤差（エラーバー）の組が得られる</li>
 <li><p>出力されるエネルギーがサイトあたりのものであることに注意</p>
 
-<p>grep ene sample.log.000</p></li>
+<pre><code>grep ene sample.log.000
+</code></pre></li>
 </ul></li>
 </ol></li>
 </ol>
@@ -449,11 +462,12 @@ pre {
 <li><code>feram</code>コマンドにはパスが通っています．LXTerminalから<code>feram foo123.feram</code>と実行できます．</li>
 <li><p>実行例（数十分のシミュレーションの後，ヒステリシスループを描きます．）</p>
 
-<p>cp -a /usr/share/feram/example/27example-BaTiO3-new-param-E_wave .
-   cd 27example-BaTiO3-new-param-E_wave
-   feram 360cos.feram 360sin.feram
-   ./hysteresis.gp
-   evince hysteresis.eps</p></li>
+<pre><code>cp -a /usr/share/feram/example/27example-BaTiO3-new-param-E_wave .
+cd 27example-BaTiO3-new-param-E_wave
+feram 360cos.feram 360sin.feram
+./hysteresis.gp
+evince hysteresis.eps
+</code></pre></li>
 </ol>
 
 <h3><a name="hphi"></a>HPhi</h3>
@@ -462,9 +476,10 @@ pre {
 <li>チュートリアル: /usr/share/hphi/samples にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行: 4x4正方格子S=1/2反強磁性Heisenberg模型をLOBCG法で解く</p>
 
-<p>cp -rp /usr/share/hphi/samples/CG/Heisenberg .
-   cd Heisenberg
-   HPhi -s stan.in</p></li>
+<pre><code>cp -rp /usr/share/hphi/samples/CG/Heisenberg .
+cd Heisenberg
+HPhi -s stan.in
+</code></pre></li>
 </ol>
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/339">MateriApps HPhiページ</a>をご覧ください.</p>
@@ -475,10 +490,11 @@ pre {
 <li>チュートリアル: /usr/share/lammps/examples にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行: NaCl using the EIM potential</p>
 
-<p>mkdir eim
-   cp /usr/share/lammps/examples/eim/* eim
-   cd eim
-   lammps -in in.eim</p></li>
+<pre><code>mkdir eim
+cp /usr/share/lammps/examples/eim/* eim
+cd eim
+lammps -in in.eim
+</code></pre></li>
 </ol>
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/596">MateriApps LAMMPSページ</a>をご覧ください.</p>
@@ -489,9 +505,10 @@ pre {
 <li>チュートリアル: /usr/share/mvmc/sample にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行: 反強磁性 S=1/2 Heisenberg chain</p>
 
-<p>cp -rp /usr/share/mvmc/samples/Standard/Spin/HeisenbergChain .
-   cd HeisenbergChain
-   vmc -s StdFace.def</p></li>
+<pre><code>cp -rp /usr/share/mvmc/samples/Standard/Spin/HeisenbergChain .
+cd HeisenbergChain
+vmc -s StdFace.def
+</code></pre></li>
 </ol>
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/81">MateriApps mVMCページ</a>をご覧ください.</p>
@@ -505,12 +522,14 @@ pre {
 <ol>
 <li><p>実行用ディレクトリの作成とインプットのコピー</p>
 
-<p>mkdir openmx
-  cp /usr/share/openmx/work/Methane.dat openmx
-  cd openmx</p></li>
+<pre><code>mkdir openmx
+cp /usr/share/openmx/work/Methane.dat openmx
+cd openmx
+</code></pre></li>
 <li><p>OpenMX の実行</p>
 
-<p>openmx Methane.dat</p></li>
+<pre><code>openmx Methane.dat
+</code></pre></li>
 <li><p>結果の確認</p>
 
 <p><a href="http://www.openmx-square.org/openmx_man3.7/node16.html">http://www.openmx-square.org/openmx_man3.7/node16.html</a> に掲載されている結果と比較</p></li>
@@ -523,9 +542,10 @@ pre {
 <li>チュートリアル: /usr/share/espresso/examples にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行:</p>
 
-<p>cp -rp /usr/share/espresso/examples .
-   cd examples/PW/examples/example01
-   ./run_example</p></li>
+<pre><code>cp -rp /usr/share/espresso/examples .
+cd examples/PW/examples/example01
+./run_example
+</code></pre></li>
 </ol>
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/720">MateriApps Quantum ESPRESSOページ</a>をご覧ください.</p>
@@ -536,9 +556,10 @@ pre {
 <li>チュートリアル: /usr/share/respack/sample にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行:</p>
 
-<p>cp -rp /usr/share/respack/sample/xtapp/Al.fcc.6x6x6 .
-   cd Al.fcc.6x6x6
-   sh Al.sh</p></li>
+<pre><code>cp -rp /usr/share/respack/sample/xtapp/Al.fcc.6x6x6 .
+cd Al.fcc.6x6x6
+sh Al.sh
+</code></pre></li>
 </ol>
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/767">MateriApps RESPACKページ</a>をご覧ください.</p>
@@ -549,9 +570,10 @@ pre {
 <li>チュートリアル: /usr/share/salmon/examples にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行:</p>
 
-<p>cp -rp /usr/share/salmon/examples .
-   cd examples/exercise_01_C2H2_gs
-   salmon.cpu &lt; C2H2_gs.inp</p></li>
+<pre><code>cp -rp /usr/share/salmon/examples .
+cd examples/exercise_01_C2H2_gs
+salmon.cpu &lt; C2H2_gs.inp
+</code></pre></li>
 </ol>
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/321">MateriApps SALMONページ</a>をご覧ください.</p>
@@ -567,19 +589,22 @@ pre {
 <ol>
 <li><p>実行用ディレクトリの作成とインプットのコピー</p>
 
-<p>mkdir smash
-  cd smash
-  cp /usr/share/smash/example/anthracene.inp .</p></li>
+<pre><code>mkdir smash
+cd smash
+cp /usr/share/smash/example/anthracene.inp .
+</code></pre></li>
 <li><p>SMASHの実行</p>
 
-<p>smash &lt; anthracene.inp &gt; anthracene.out</p>
+<pre><code>smash &lt; anthracene.inp &gt; anthracene.out
+</code></pre>
 
 <p>アウトプットファイル anthracene.out とチェックポイントファイル anthracene.chk が生成されます. 計算結果は, アウトプットはテキストファイルで開く事で確認できます. 内容は, 計算条件, 原子座標, 基底関数, SCF 繰り返し計算過程, 軌道エネルギー, 軌道係数です.</p></li>
 <li><p>表示したい軌道の vtk ファイル(anthracene-HOMO.vtk と anthracene-LUMO.vtk)を作成</p>
 
-<p>smash-vtk-generator anthracene.chk anthracene-HOMO.vtk MO HOMO
-  smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO</p></li>
-<li><p>左下のメニュー &gt; Education &gt; ParaView Client を起動</p></li>
+<pre><code>smash-vtk-generator anthracene.chk anthracene-HOMO.vtk MO HOMO
+smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
+</code></pre></li>
+<li>左下のメニュー &gt; Education &gt; ParaView Client を起動</li>
 <li>File メニューから Load State を選択し, /usr/share/smash/visual/mo-view.pvsm を開く.</li>
 <li>新たに現れたウィンドウで anthracene-HOMO.vtk を開くと, HOMO が表示されます.</li>
 <li>LUMO を表示したいときは, /usr/share/smash/visual/mo-view.pvsm を開いた後, anthracene-LUMO.vtk を開く</li>
@@ -602,19 +627,23 @@ pre {
 <ol>
 <li><p>サンプル実行用のディレクトリを作成</p>
 
-<p>mkdir xtapp</p></li>
+<pre><code>mkdir xtapp
+</code></pre></li>
 <li><p>サンプル用のシェルスクリプトをコピー</p>
 
-<p>cp /usr/share/xtapp/check/* xtapp
-   cd xtapp</p></li>
+<pre><code>cp /usr/share/xtapp/check/* xtapp
+cd xtapp
+</code></pre></li>
 <li><p>実行例1: シリコンの計算<br>
 si.shを実行し, シリコンの計算を行います.</p>
 
-<p>sh si.sh</p></li>
+<pre><code>sh si.sh
+</code></pre></li>
 <li><p>実行例2: αクオーツの計算<br>
 quartz.shを実行し, αクオーツの計算を行います.</p>
 
-<p>sh quartz.sh</p></li>
+<pre><code>sh quartz.sh
+</code></pre></li>
 <li><p>TAPIOCAの起動
  TAPIOCAは, コマンドラインからtapiocaと入力するか, 左下のメニューから起動(MateriApps &gt; Tapioca)します.</p>
 
