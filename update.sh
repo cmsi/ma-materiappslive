@@ -28,6 +28,8 @@ git clone $REPOSITORY $SRCDIR
 
 wget -O github.css "$CSS"
 
+### GettingStarted
+
 cat << EOF > files/wiki/GettingStarted.html
 <html>
 <head>
@@ -52,6 +54,8 @@ cat << EOF >> files/wiki/GettingStarted.html
 </body>
 </html>
 EOF
+
+### GettingStarted-en
 
 cat << EOF > files/wiki/GettingStarted-en.html
 <html>
@@ -80,6 +84,8 @@ EOF
 
 cp -fp $SRCDIR/GettingStarted-alps.jpg $SRCDIR/GettingStarted-tapioca.jpg files/wiki/
 
+### ApplicationsAndTools
+
 cat << EOF > files/wiki/ApplicationsAndTools.html
 <html>
 <head>
@@ -104,6 +110,8 @@ cat << EOF >> files/wiki/ApplicationsAndTools.html
 </body>
 </html>
 EOF
+
+### ApplicationsAndTools-en
 
 cat << EOF > files/wiki/ApplicationsAndTools-en.html
 <html>
@@ -130,10 +138,66 @@ cat << EOF >> files/wiki/ApplicationsAndTools-en.html
 </html>
 EOF
 
-FILES="files/wiki/GettingStarted.html files/wiki/GettingStarted-en.html files/wiki/ApplicationsAndTools.html files/wiki/ApplicationsAndTools-en.html"
+### ceenv
+
+cat << EOF > files/wiki/ceenv.html
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ceenv: Computer Experiment Environment/title>
+  <style type="text/css">
+<!--
+EOF
+
+cat github.css >> files/wiki/ceenv.html
+
+cat << EOF >> files/wiki/ceenv.html
+-->
+  </style>
+</head>
+<body>
+EOF
+
+$GFM --readme $SRCDIR/ceenv.md >> files/wiki/ceenv.html
+
+cat << EOF >> files/wiki/ceenv.html
+</body>
+</html>
+EOF
+
+### ceenv-en
+
+cat << EOF > files/wiki/ceenv-en.html
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ceenv: Computer Experiment Environment/title>
+  <style type="text/css">
+<!--
+EOF
+
+cat github.css >> files/wiki/ceenv-en.html
+
+cat << EOF >> files/wiki/ceenv-en.html
+-->
+  </style>
+</head>
+<body>
+EOF
+
+$GFM --readme $SRCDIR/ceenv-en.md >> files/wiki/ceenv-en.html
+
+cat << EOF >> files/wiki/ceenv-en.html
+</body>
+</html>
+EOF
+
+FILES="files/wiki/GettingStarted.html files/wiki/GettingStarted-en.html files/wiki/ApplicationsAndTools.html files/wiki/ApplicationsAndTools-en.html files/wiki/ceenv.html files/wiki/ceenv-en.html"
 for file in $FILES; do
   sed -i 's%<a href="GettingStarted-en">%<a href="GettingStarted-en.html">%' $file
   sed -i 's%<a href="GettingStarted">%<a href="GettingStarted.html">%' $file
   sed -i 's%<a href="ApplicationsAndTools-en">%<a href="ApplicationsAndTools-en.html">%' $file
   sed -i 's%<a href="ApplicationsAndTools">%<a href="ApplicationsAndTools.html">%' $file
+  sed -i 's%<a href="ceenv-en">%<a href="ceenv-en.html">%' $file
+  sed -i 's%<a href="ceenv">%<a href="ceenv.html">%' $file
 done

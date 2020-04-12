@@ -1,3 +1,10 @@
+materiappslive (1:2.0-1) unstable; urgency=low
+
+  * Add ceenv package
+  * Update wiki
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Sun, 12 Apr 2020 23:28:38 +0900
+
 materiappslive (1:1.0-7) unstable; urgency=low
 
   * Update wiki

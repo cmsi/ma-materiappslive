@@ -9,3 +9,7 @@ Homepage: http://cmsi.github.io/MateriAppsLive
 Package: materiappslive
 Architecture: all
 Description: Menu and documents for MateriApps LIVE!
+
+Package: ceenv
+Architecture: all
+Description: Documents for ceenv

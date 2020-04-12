@@ -1,4 +1,5 @@
 applications/*	/usr/share/applications
 etc/GettingStarted.desktop	/etc/skel/Desktop
 etc/lxterminal.conf /etc/skel/.config/lxterminal
-wiki/* /usr/share/MateriAppsLive/wiki
+wiki/GettingStarted* /usr/share/MateriAppsLive/wiki
+wiki/ApplicationsAndTools* /usr/share/MateriAppsLive/wiki
