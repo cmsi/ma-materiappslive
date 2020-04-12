@@ -144,7 +144,7 @@ cat << EOF > files/wiki/ceenv.html
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>ceenv: Computer Experiment Environment/title>
+  <title>ceenv: Computer Experiment Environment</title>
   <style type="text/css">
 <!--
 EOF
@@ -171,7 +171,7 @@ cat << EOF > files/wiki/ceenv-en.html
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>ceenv: Computer Experiment Environment/title>
+  <title>ceenv: Computer Experiment Environment</title>
   <style type="text/css">
 <!--
 EOF
