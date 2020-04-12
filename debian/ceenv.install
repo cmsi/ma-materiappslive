@@ -1,3 +1,4 @@
 etc/ceenv.desktop	/etc/skel/Desktop
 etc/lxterminal.conf /etc/skel/.config/lxterminal
 wiki/ceenv* /usr/share/ceenv/wiki
+test/* /usr/share/MateriAppsLive/test
