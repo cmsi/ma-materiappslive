@@ -3,4 +3,3 @@ etc/GettingStarted.desktop	/etc/skel/Desktop
 etc/lxterminal.conf /etc/skel/.config/lxterminal
 wiki/GettingStarted* /usr/share/MateriAppsLive/wiki
 wiki/ApplicationsAndTools* /usr/share/MateriAppsLive/wiki
-test/* /usr/share/MateriAppsLive/test
