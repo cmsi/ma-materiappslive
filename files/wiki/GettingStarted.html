@@ -305,7 +305,7 @@ pre {
 
 <h2>MateriApps LIVE!上でのアプリの使用方法</h2>
 
-<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#conquest">CONQUEST</a>, <a href="#dcore">DCore</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
+<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#conquest">CONQUEST</a>, <a href="#dcore">DCore</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#octa">OCTA</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#tenes">TeNeS</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR</h3>
 
@@ -528,10 +528,31 @@ vmc -s StdFace.def
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/81">MateriApps mVMCページ</a>をご覧ください.</p>
 
+<h3><a name="octa"></a>OCTA</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/octa/tutorial にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行: Sushiによるポリマーブレンドの界面の計算</p>
+
+<ol>
+<li><p>インプットのコピーとSushiの実行</p>
+
+<p>cp /usr/share/octa/tutorial/sushi/Input/interface_uin.udf .
+   sushi -Iinterface_uin.udf</p></li>
+<li><p>Gourmetによるグラフの描画</p>
+
+<p>gourmet interface_uot.pdf</p>
+
+<p>一番下のスライドバーを動かし、stepを1に変更する。SUSHIOutputフォルダを右クリックし、「Plot 1D field...」を選択。パラメータパネルが現れるので「OK」をクリックする</p></li>
+</ol></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/436">MateriApps OCTAページ</a>をご覧ください.</p>
+
 <h3><a name="openmx"></a>OpenMX</h3>
 
 <ol>
-<li>チュートリアル: /usr/share/openmx/work にサンプルファイルが格納されています。</li>
+<li>チュートリアル: /usr/share/openmx/work にサンプルファイルが格納されています.</li>
 <li><p>実行例</p>
 
 <ol>
@@ -627,6 +648,21 @@ smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
 </ol>
 
 <p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/SMASH">SMASHの情報</a>」をご覧ください.</p>
+
+<h3><a name="tenes"></a>TeNeS</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/tenes/sample にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行:</p>
+
+<pre><code>cp -rp /usr/share/tenes/sample .
+cd sample/01_transverse_field_ising
+python3 tutorial_example.py
+python3 tutorial_read.py
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/2290">MateriApps TeNeSページ</a>をご覧ください.</p>
 
 <h3><a name="xtapp"></a>xTAPP &amp; TAPIOCA</h3>
 

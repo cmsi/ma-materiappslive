@@ -305,7 +305,7 @@ pre {
 
 <h2>How to use MateriApps LIVE! Applications</h2>
 
-<p>In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#conquest">CONQUEST</a>, <a href="#dcore">DCore</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
+<p>In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#conquest">CONQUEST</a>, <a href="#dcore">DCore</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#octa">OCTA</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#tenes">TeNeS</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR (formerly called Machikaneyama2002)</h3>
 
@@ -526,6 +526,27 @@ vmc -s StdFace.def
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/app/81">MateriApps mVMC Page</a>.</p>
 
+<h3><a name="octa"></a>OCTA</h3>
+
+<ol>
+<li>Tutorials: Sample files are available in /usr/share/octa/tutorial</li>
+<li><p>Example: Sushi calculation of polymer blend interface</p>
+
+<ol>
+<li><p>Copy an input file and execute Sushi</p>
+
+<p>cp /usr/share/octa/tutorial/sushi/Input/interface_uin.udf .
+   sushi -Iinterface_uin.udf</p></li>
+<li><p>Plot by using Gourmet</p>
+
+<p>gourmet interface_uot.pdf</p>
+
+<p>Move the slide bar at the bottom and change &quot;Step&quot; to 1. Right-click on the &quot;SUSHIOutput&quot; folder and select &quot;Plot 1D field ...&quot;. Click &quot;OK&quot; in the parameter panel.</p></li>
+</ol></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/446">MateriApps OCTA Page</a>.</p>
+
 <h3><a name="openmx"></a>OpenMX</h3>
 
 <ol>
@@ -625,6 +646,21 @@ smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
 </ol>
 
 <p>For more detailed information, please look at &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/SMASH">SMASH Information</a>&quot; in MateriApps LIVE! Wiki.</p>
+
+<h3><a name="tenes"></a>TeNeS</h3>
+
+<ol>
+<li>Tutorial: Sample files are available in /usr/share/tenes/sample.</li>
+<li><p>Example</p>
+
+<pre><code>cp -rp /usr/share/tenes/sample .
+cd sample/01_transverse_field_ising
+python3 tutorial_example.py
+python3 tutorial_read.py
+</code></pre></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/2291">MateriApps TeNeS Page</a>.</p>
 
 <h3><a name="xtapp"></a>xTAPP &amp; TAPIOCA</h3>
 
