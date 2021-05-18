@@ -4,8 +4,8 @@ SCRIPT_DIR=$(dirname $0)
 REPOSITORY="https://github.com/cmsi/MateriAppsLive.wiki.git"
 SRCDIR="MateriAppsLive.wiki"
 
-sudo apt-get -y install ruby-dev rubygems
-sudo gem install github-markdown
+# sudo apt-get -y install ruby-dev rubygems
+# sudo gem install github-markdown
 
 if test -f "/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"; then
   GFM="/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"
