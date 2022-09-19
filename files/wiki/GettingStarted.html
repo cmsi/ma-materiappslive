@@ -305,7 +305,7 @@ pre {
 
 <h2>MateriApps LIVE!上でのアプリの使用方法</h2>
 
-<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#conquest">CONQUEST</a>, <a href="#dcore">DCore</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
+<p>ここでは, <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#conquest">CONQUEST</a>, <a href="#dcore">DCore</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#octa">OCTA</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#tenes">TeNeS</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>について簡単に説明します.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR</h3>
 
@@ -344,11 +344,11 @@ cd mc-02-susceptibilities
 </code></pre></li>
 <li><p>Pythonスクリプトを順番に実行</p>
 
-<pre><code>python tutorial2a.py
-python tutorial2b.py
-python tutorial2c.py
-python tutorial2d.py
-python tutorial2full.py
+<pre><code>python3 tutorial2a.py
+python3 tutorial2b.py
+python3 tutorial2c.py
+python3 tutorial2d.py
+python3 tutorial2full.py
 </code></pre>
 
 <p>Pythonスクリプトを実行する毎に結果がプロットされます. プロットウィンドウの右上の×印をクリックしてウィンドウを閉じると, Pythonスクリプトが終了します. 最後のスクリプトを実行すると, それまでの計算結果がまとめてプロットされます.</p>
@@ -423,77 +423,28 @@ DDMRG
 <h3><a name="dsqss"></a>DSQSS</h3>
 
 <ol>
-<li><a href="https://github.com/qmc/dsqss/wiki/%E5%AE%9F%E8%A1%8C%E6%96%B9%E6%B3%95">実行方法</a> および <a href="https://github.com/qmc/dsqss/wiki/%E8%A8%88%E7%AE%97%E4%BE%8B">計算例</a> が公式のwiki に用意されています。</li>
-<li><p>単純なサンプルとして、S=1/2 反強磁性ハイゼンベルグダイマーの計算をおこないます。</p>
+<li>チュートリアル: /usr/share/dsqss/samples にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行</p>
 
-<ol>
-<li><p>（局所）ハミルトニアンを設定</p>
-
-<ul>
-<li>S=1/2, J=-0.5 (反強磁性), H=0 （ゼロ磁場）</li>
-<li><p>格子が周期境界条件になり、ダイマーだとボンドが2本になるので、Jを半分にしていることに注意</p>
-
-<pre><code>hamgen_H 1 -0.5 0.0
-dla_alg
+<pre><code>cp -rp /usr/share/dsqss/samples .
+cd samples/dla/01_spindimer
+dla_pre std.toml
+dla param.in
+cat sample.log | grep ene
 </code></pre></li>
-</ul></li>
-<li><p>格子+逆温度を設定</p>
-
-<ul>
-<li><p>D=1次元, L=2, 逆温度beta=10.0</p>
-
-<pre><code>lattgene 1 2 10.0
-</code></pre></li>
-</ul></li>
-<li><p>モンテカルロサンプル数などが書かれた入力ファイルの雛形をコピーしてくる</p>
-
-<pre><code>cp /usr/share/dsqss/samples/manual_run/qmc.inp.org qmc.inp
-</code></pre></li>
-<li><p>計算を実行</p>
-
-<pre><code>dla qmc.inp
-</code></pre></li>
-<li><p>計算結果（エネルギー）を出力</p>
-
-<ul>
-<li>平均値と統計誤差（エラーバー）の組が得られる</li>
-<li><p>出力されるエネルギーがサイトあたりのものであることに注意</p>
-
-<pre><code>grep ene sample.log.000
-</code></pre></li>
-</ul></li>
-</ol></li>
 </ol>
 
 <p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/DSQSS">DSQSSの情報</a>」をご覧ください.</p>
-
-<h3><a name="fearm"></a>feram</h3>
-
-<p>feramは強誘電体の高速分子動力学シミュレーターです．
-<a href="http://loto.sourceforge.net/feram/">http://loto.sourceforge.net/feram/</a> がホームページです．</p>
-
-<ol>
-<li>/usr/share/feram/example/以下に例題が置かれています．</li>
-<li><code>feram</code>コマンドにはパスが通っています．LXTerminalから<code>feram foo123.feram</code>と実行できます．</li>
-<li><p>実行例（数十分のシミュレーションの後，ヒステリシスループを描きます．）</p>
-
-<pre><code>cp -a /usr/share/feram/example/27example-BaTiO3-new-param-E_wave .
-cd 27example-BaTiO3-new-param-E_wave
-feram 360cos.feram 360sin.feram
-./hysteresis.gp
-evince hysteresis.eps
-</code></pre></li>
-</ol>
 
 <h3><a name="hphi"></a>HPhi</h3>
 
 <ol>
 <li>チュートリアル: /usr/share/hphi/samples にサンプルファイルが格納されています.</li>
-<li><p>サンプルの実行: 4x4正方格子S=1/2反強磁性Heisenberg模型をLOBCG法で解く</p>
+<li><p>サンプルの実行: スピンダイマーを完全対角化で解く</p>
 
-<pre><code>cp -rp /usr/share/hphi/samples/CG/Heisenberg .
-cd Heisenberg
-HPhi -s stan.in
+<pre><code>cp -rp /usr/share/hphi/samples .
+cd samples/tutorial_1.1
+HPhi -s stan1.in
 </code></pre></li>
 </ol>
 
@@ -508,7 +459,7 @@ HPhi -s stan.in
 <pre><code>mkdir eim
 cp /usr/share/lammps/examples/eim/* eim
 cd eim
-lammps -in in.eim
+lmp -in in.eim
 </code></pre></li>
 </ol>
 
@@ -528,10 +479,31 @@ vmc -s StdFace.def
 
 <p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/81">MateriApps mVMCページ</a>をご覧ください.</p>
 
+<h3><a name="octa"></a>OCTA</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/octa/tutorial にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行: Sushiによるポリマーブレンドの界面の計算</p>
+
+<ol>
+<li><p>インプットのコピーとSushiの実行</p>
+
+<p>cp /usr/share/octa/tutorial/sushi/Input/interface_uin.udf .
+   sushi -Iinterface_uin.udf</p></li>
+<li><p>Gourmetによるグラフの描画</p>
+
+<p>gourmet interface_uot.pdf</p>
+
+<p>一番下のスライドバーを動かし、stepを1に変更する。SUSHIOutputフォルダを右クリックし、「Plot 1D field...」を選択。パラメータパネルが現れるので「OK」をクリックする</p></li>
+</ol></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/436">MateriApps OCTAページ</a>をご覧ください.</p>
+
 <h3><a name="openmx"></a>OpenMX</h3>
 
 <ol>
-<li>チュートリアル: /usr/share/openmx/work にサンプルファイルが格納されています。</li>
+<li>チュートリアル: /usr/share/openmx/work にサンプルファイルが格納されています.</li>
 <li><p>実行例</p>
 
 <ol>
@@ -582,12 +554,12 @@ sh Al.sh
 <h3><a name="salmon"></a>SALMON</h3>
 
 <ol>
-<li>チュートリアル: /usr/share/salmon/examples にサンプルファイルが格納されています.</li>
+<li>チュートリアル: /usr/share/salmon/samples にサンプルファイルが格納されています.</li>
 <li><p>サンプルの実行:</p>
 
-<pre><code>cp -rp /usr/share/salmon/examples .
-cd examples/exercise_01_C2H2_gs
-salmon.cpu &lt; C2H2_gs.inp
+<pre><code>cp -rp /usr/share/salmon/samples .
+cd samples/exercise_01_C2H2_gs
+salmon &lt; C2H2_gs.inp
 </code></pre></li>
 </ol>
 
@@ -627,6 +599,21 @@ smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
 </ol>
 
 <p>より詳しい情報は MateriApp LIVE! wiki の「<a href="https://github.com/cmsi/MateriAppsLive/wiki/SMASH">SMASHの情報</a>」をご覧ください.</p>
+
+<h3><a name="tenes"></a>TeNeS</h3>
+
+<ol>
+<li>チュートリアル: /usr/share/tenes/sample にサンプルファイルが格納されています.</li>
+<li><p>サンプルの実行:</p>
+
+<pre><code>cp -rp /usr/share/tenes/sample .
+cd sample/01_transverse_field_ising
+python3 tutorial_example.py
+python3 tutorial_read.py
+</code></pre></li>
+</ol>
+
+<p>より詳しい情報は、<a href="https://ma.issp.u-tokyo.ac.jp/app/2290">MateriApps TeNeSページ</a>をご覧ください.</p>
 
 <h3><a name="xtapp"></a>xTAPP &amp; TAPIOCA</h3>
 

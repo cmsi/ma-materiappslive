@@ -305,7 +305,7 @@ pre {
 
 <h2>How to use MateriApps LIVE! Applications</h2>
 
-<p>In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#conquest">CONQUEST</a>, <a href="#dcore">DCore</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#feram">feram</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
+<p>In this document, we explain how to run <a href="#akaikkr">AkaiKKR</a>, <a href="#alps">ALPS</a>, <a href="#bsa">BSA</a>, <a href="#conquest">CONQUEST</a>, <a href="#dcore">DCore</a>, <a href="#ddmrg">DDMRG</a>, <a href="#dsqss">DSQSS</a>, <a href="#hphi">HPhi</a>, <a href="#lammps">LAMMPS</a>, <a href="#mvmc">mVMC</a>, <a href="#octa">OCTA</a>, <a href="#openmx">OpenMX</a>, <a href="#espresso">Quantum ESPRESSO</a>, <a href="#respack">RESPACK</a>, <a href="#salmon">SALMON</a>, <a href="#smash">SMASH</a>, <a href="#tenes">TeNeS</a>, <a href="#xtapp">xTAPP &amp; TAPIOCA</a>.</p>
 
 <h3><a name="akaikkr"></a>AkaiKKR (formerly called Machikaneyama2002)</h3>
 
@@ -344,11 +344,11 @@ cd mc-02-susceptibilities
 </code></pre></li>
 <li><p>Execute Python scripts</p>
 
-<pre><code>python tutorial2a.py
-python tutorial2b.py
-python tutorial2c.py
-python tutorial2d.py
-python tutorial2full.py
+<pre><code>python3 tutorial2a.py
+python3 tutorial2b.py
+python3 tutorial2c.py
+python3 tutorial2d.py
+python3 tutorial2full.py
 </code></pre>
 
 <p>At the end of each Python script, calculation results will be plotted.  The Python scripts finishes after closing the window by clicking the top-right &#39;X&#39; mark. By executing the last script, all the results will be plotted in one figure.</p>
@@ -423,75 +423,28 @@ DDMRG
 <h3><a name="dsqss"></a>DSQSS</h3>
 
 <ol>
-<li><a href="https://github.com/qmc/dsqss/wiki/%E5%AE%9F%E8%A1%8C%E6%96%B9%E6%B3%95">How to run</a> and <a href="https://github.com/qmc/dsqss/wiki/%E8%A8%88%E7%AE%97%E4%BE%8B">Examples</a> are available (in Japanese) in the DSQSS official wiki.</li>
-<li><p>For the simplest example, perform directed loop algorithm for S=1/2 antiferromagnetic Heisenberg dimer.</p>
+<li>Tutorials: Sample files are available in /usr/share/dsqss/samples</li>
+<li><p>Example</p>
 
-<ol>
-<li><p>Set up (local) Hamiltonian </p>
-
-<ul>
-<li>S=1/2, J=-0.5 (antiferro), H=0 (zero field)</li>
-<li><p>Due to the periodic boundary condition, let the interaction J be -0.5 instead of -1.0.</p>
-
-<pre><code>hamgen_H 1 -0.5 0.0
-dla_alg
+<pre><code>cp -rp /usr/share/dsqss/samples .
+cd samples/dla/01_spindimer
+dla_pre std.toml
+dla param.in
+cat sample.log | grep ene
 </code></pre></li>
-</ul></li>
-<li><p>Set up lattice (including inverse temperature)</p>
-
-<ul>
-<li><p>D=1, L=2, beta=10.0</p>
-
-<pre><code>lattgene 1 2 10.0
-</code></pre></li>
-</ul></li>
-<li><p>Copy an input file from <code>/usr/share/dsqss/samples/manual_run/qmc.inp.org</code></p>
-
-<pre><code>cp /usr/share/dsqss/samples/manual_run/qmc.inp.org qmc.inp
-</code></pre></li>
-<li><p>Perfome simulation</p>
-
-<pre><code>dla qmc.inp
-</code></pre></li>
-<li><p>Check calculated energy per site</p>
-
-<ul>
-<li><p>Expectation value and statistical error will be obtained</p>
-
-<pre><code>grep ene sample.log.000
-</code></pre></li>
-</ul></li>
-</ol></li>
 </ol>
 
 <p>For more detailed information, please look at &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/DSQSS">DSQSS Information</a>&quot; in MateriApp LIVE! wiki.</p>
-
-<h3><a name="fearm"></a>feram</h3>
-
-<p>feram is a fast molecular dynamics (MD) simulator for ferroelectrics.  More information is available at feram homepage <a href="http://loto.sourceforge.net/feram/">http://loto.sourceforge.net/feram/</a>.</p>
-
-<ol>
-<li>Examples are provided in /usr/share/feram/example/.</li>
-<li><code>feram</code> command is placed in the search path. It can be executed as <code>feram foo123.feram</code> in LXTerminal.</li>
-<li><p>Example (hysteresis loop will be drawn after simulation for tens of minutes)</p>
-
-<pre><code>cp -a /usr/share/feram/example/27example-BaTiO3-new-param-E_wave .
-cd 27example-BaTiO3-new-param-E_wave
-feram 360cos.feram 360sin.feram
-./hysteresis.gp
-evince hysteresis.eps
-</code></pre></li>
-</ol>
 
 <h3><a name="hphi"></a>HPhi</h3>
 
 <ol>
 <li>Tutorials: Sample files are available in /usr/share/hphi/samples</li>
-<li><p>Example: Solve 4x4-square lattice S=1/2 antiferromagnetic Heisenberg model by the LOBCG method</p>
+<li><p>Example: Solve spin dimer by the full diagonalization method</p>
 
-<pre><code>cp -rp /usr/share/hphi/samples/CG/Heisenberg .
-cd Heisenberg
-HPhi -s stan.in
+<pre><code>cp -rp /usr/share/hphi/samples .
+cd samples/tutorial_1.1
+HPhi -s stan1.in
 </code></pre></li>
 </ol>
 
@@ -506,7 +459,7 @@ HPhi -s stan.in
 <pre><code>mkdir eim
 cp /usr/share/lammps/examples/eim/* eim
 cd eim
-lammps -in in.eim
+lmp -in in.eim
 </code></pre></li>
 </ol>
 
@@ -525,6 +478,27 @@ vmc -s StdFace.def
 </ol>
 
 <p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/app/81">MateriApps mVMC Page</a>.</p>
+
+<h3><a name="octa"></a>OCTA</h3>
+
+<ol>
+<li>Tutorials: Sample files are available in /usr/share/octa/tutorial</li>
+<li><p>Example: Sushi calculation of polymer blend interface</p>
+
+<ol>
+<li><p>Copy an input file and execute Sushi</p>
+
+<p>cp /usr/share/octa/tutorial/sushi/Input/interface_uin.udf .
+   sushi -Iinterface_uin.udf</p></li>
+<li><p>Plot by using Gourmet</p>
+
+<p>gourmet interface_uot.pdf</p>
+
+<p>Move the slide bar at the bottom and change &quot;Step&quot; to 1. Right-click on the &quot;SUSHIOutput&quot; folder and select &quot;Plot 1D field ...&quot;. Click &quot;OK&quot; in the parameter panel.</p></li>
+</ol></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/446">MateriApps OCTA Page</a>.</p>
 
 <h3><a name="openmx"></a>OpenMX</h3>
 
@@ -580,12 +554,12 @@ sh Al.sh
 <h3><a name="salmon"></a>SALMON</h3>
 
 <ol>
-<li>Tutorial: Sample files are available in /usr/share/salmon/examples.</li>
+<li>Tutorial: Sample files are available in /usr/share/salmon/samples.</li>
 <li><p>Example</p>
 
-<pre><code>cp -rp /usr/share/salmon/examples .
-cd examples/exercise_01_C2H2_gs
-salmon.cpu &lt; C2H2_gs.inp
+<pre><code>cp -rp /usr/share/salmon/samples .
+cd samples/exercise_01_C2H2_gs
+salmon &lt; C2H2_gs.inp
 </code></pre></li>
 </ol>
 
@@ -625,6 +599,21 @@ smash-vtk-generator anthracene.chk anthracene-LUMO.vtk MO LUMO
 </ol>
 
 <p>For more detailed information, please look at &quot;<a href="https://github.com/cmsi/MateriAppsLive/wiki/SMASH">SMASH Information</a>&quot; in MateriApps LIVE! Wiki.</p>
+
+<h3><a name="tenes"></a>TeNeS</h3>
+
+<ol>
+<li>Tutorial: Sample files are available in /usr/share/tenes/sample.</li>
+<li><p>Example</p>
+
+<pre><code>cp -rp /usr/share/tenes/sample .
+cd sample/01_transverse_field_ising
+python3 tutorial_example.py
+python3 tutorial_read.py
+</code></pre></li>
+</ol>
+
+<p>For more detailed information, please look at <a href="https://ma.issp.u-tokyo.ac.jp/en/app/2291">MateriApps TeNeS Page</a>.</p>
 
 <h3><a name="xtapp"></a>xTAPP &amp; TAPIOCA</h3>
 

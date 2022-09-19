@@ -18,3 +18,5 @@ pip3 > /dev/null 2>&1 || echo "Error: pip3"
 
 # evince
 evince --version > /dev/null 2>&1 || echo "Error: evince"
+
+xsel -h > /dev/null 2>&1 || echo "Error: xsel"
